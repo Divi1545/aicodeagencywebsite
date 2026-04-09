@@ -7,11 +7,11 @@ import { ArrowRight, Loader2, Star } from "lucide-react";
 type Tab = "all" | ProductType;
 
 const TABS: { value: Tab; label: string }[] = [
-  { value: "all", label: "All Products" },
-  { value: "chatbot", label: "Chatbots" },
-  { value: "tool", label: "Tools" },
+  { value: "all",      label: "All Products" },
+  { value: "chatbot",  label: "Chatbots" },
+  { value: "tool",     label: "Tools" },
   { value: "platform", label: "Platforms" },
-  { value: "bundle", label: "Bundles" },
+  { value: "bundle",   label: "Bundles" },
 ];
 
 async function handleBuy(productId: string, isBundle = false) {
@@ -21,132 +21,85 @@ async function handleBuy(productId: string, isBundle = false) {
     body: JSON.stringify({ productId, isBundle }),
   });
   const data = await res.json();
-  if (data.url) {
-    window.location.href = data.url;
-  } else {
-    alert("Failed to start checkout. Please try again.");
-  }
+  if (data.url) window.location.href = data.url;
+  else alert("Failed to start checkout. Please try again.");
 }
 
 function ProductCard({ product }: { product: (typeof PRODUCTS)[0] }) {
   const [loading, setLoading] = useState(false);
-
-  async function onBuy() {
-    setLoading(true);
-    await handleBuy(product.id);
-    setLoading(false);
-  }
+  async function onBuy() { setLoading(true); await handleBuy(product.id); setLoading(false); }
 
   return (
-    <div className="group flex flex-col p-6 rounded-xl border border-brand-border bg-brand-surface/30 hover:border-brand-green/30 hover:bg-brand-surface/60 transition-all">
-      <div className="flex items-start justify-between mb-4">
+    <div className="clay-card clay-card-hover flex flex-col p-6">
+      <div className="flex items-start justify-between mb-5">
         <span className="text-3xl">{product.emoji}</span>
-        <span className="font-dm-mono text-[10px] border border-brand-border text-brand-white/40 px-2 py-0.5 rounded-full uppercase tracking-wider">
-          {product.category}
-        </span>
+        <span className="clay-tag">{product.category}</span>
       </div>
-      <h3 className="font-syne font-bold text-base text-brand-white mb-2">
-        {product.name}
-      </h3>
-      <p className="font-instrument text-sm text-brand-white/50 leading-relaxed flex-1 mb-4">
-        {product.description}
-      </p>
-      <ul className="space-y-1 mb-6">
+      <h3 className="font-syne font-bold text-base text-clay-deep mb-2">{product.name}</h3>
+      <p className="font-instrument text-sm text-clay-mid leading-relaxed flex-1 mb-4">{product.description}</p>
+      <ul className="space-y-1.5 mb-6">
         {product.features.slice(0, 3).map((f) => (
-          <li
-            key={f}
-            className="flex items-center gap-2 text-xs font-instrument text-brand-white/40"
-          >
-            <span className="text-brand-green text-[10px]">✓</span>
+          <li key={f} className="flex items-center gap-2 text-xs font-instrument text-clay-mid">
+            <span className="w-4 h-4 rounded-full bg-clay-faint border border-clay-border flex items-center justify-center text-[9px] text-clay-deep shrink-0">✓</span>
             {f}
           </li>
         ))}
       </ul>
-      <div className="flex items-center justify-between mt-auto">
-        <span className="font-syne font-black text-2xl text-brand-white">
-          {product.priceLabel}
-        </span>
+      <div className="flex items-center justify-between mt-auto pt-4 border-t border-clay-border">
+        <span className="font-syne font-black text-2xl text-clay-deep">{product.priceLabel}</span>
         <button
           onClick={onBuy}
           disabled={loading}
-          className="group/btn inline-flex items-center gap-2 font-syne font-bold text-xs px-4 py-2.5 bg-brand-green text-brand-bg rounded hover:bg-brand-green/90 transition-all disabled:opacity-50"
+          className="btn-clay-dark inline-flex items-center gap-2 px-5 py-2.5 text-xs disabled:opacity-50"
         >
-          {loading ? (
-            <Loader2 size={12} className="animate-spin" />
-          ) : (
-            <>
-              BUY NOW
-              <ArrowRight
-                size={12}
-                className="group-hover/btn:translate-x-0.5 transition-transform"
-              />
-            </>
-          )}
+          {loading ? <Loader2 size={12} className="animate-spin" /> : <><span>Buy Now</span><ArrowRight size={12} /></>}
         </button>
       </div>
     </div>
   );
 }
 
-function BundleCard({ bundle, highlight }: { bundle: (typeof BUNDLES)[0]; highlight?: string }) {
+function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[0] }) {
   const [loading, setLoading] = useState(false);
-
-  async function onBuy() {
-    setLoading(true);
-    await handleBuy(bundle.id, true);
-    setLoading(false);
-  }
+  const isPopular = !!bundle.highlight;
+  async function onBuy() { setLoading(true); await handleBuy(bundle.id, true); setLoading(false); }
 
   return (
     <div
-      className={`relative flex flex-col p-8 rounded-xl border transition-all ${
-        highlight
-          ? "border-brand-green bg-brand-green/5 glow-green"
-          : "border-brand-border bg-brand-surface/30"
+      className={`relative flex flex-col p-8 rounded-[1.5rem] border transition-all ${
+        isPopular
+          ? "border-clay-deep bg-clay-deep text-white"
+          : "clay-card"
       }`}
+      style={isPopular ? { boxShadow: "0 28px 80px rgba(0,0,0,0.18), 0 8px 28px rgba(0,0,0,0.10)" } : {}}
     >
-      {highlight && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 bg-brand-green text-brand-bg font-syne font-bold text-xs px-3 py-1 rounded-full">
-          <Star size={10} fill="currentColor" /> {highlight}
+      {isPopular && (
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-white text-clay-deep font-syne font-bold text-xs px-4 py-1.5 rounded-full shadow-clay-sm">
+          <Star size={10} fill="currentColor" /> {bundle.highlight}
         </div>
       )}
-      <h3 className="font-syne font-black text-xl text-brand-white mb-2">
-        {bundle.name}
-      </h3>
-      <p className="font-instrument text-sm text-brand-white/50 mb-6">
-        {bundle.description}
-      </p>
-      <ul className="space-y-2 flex-1 mb-8">
+      <h3 className={`font-syne font-black text-xl mb-2 ${isPopular ? "text-white" : "text-clay-deep"}`}>{bundle.name}</h3>
+      <p className={`font-instrument text-sm mb-6 ${isPopular ? "text-white/60" : "text-clay-mid"}`}>{bundle.description}</p>
+      <ul className="space-y-2.5 flex-1 mb-8">
         {bundle.includes.map((item) => (
-          <li
-            key={item}
-            className="flex items-start gap-2 text-sm font-instrument text-brand-white/70"
-          >
-            <span className="text-brand-green mt-0.5">✓</span>
+          <li key={item} className={`flex items-start gap-2.5 text-sm font-instrument ${isPopular ? "text-white/80" : "text-clay-mid"}`}>
+            <span className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0 text-[9px] ${isPopular ? "bg-white/10 text-white" : "bg-clay-faint text-clay-deep border border-clay-border"}`}>✓</span>
             {item}
           </li>
         ))}
       </ul>
-      <div className="flex items-center justify-between">
-        <span className="font-syne font-black text-3xl text-brand-white">
-          {bundle.priceLabel}
-        </span>
+      <div className="flex items-center justify-between pt-4 border-t border-white/10">
+        <span className={`font-syne font-black text-3xl ${isPopular ? "text-white" : "text-clay-deep"}`}>{bundle.priceLabel}</span>
         <button
           onClick={onBuy}
           disabled={loading}
-          className={`inline-flex items-center gap-2 font-syne font-bold text-sm px-5 py-3 rounded transition-all disabled:opacity-50 ${
-            highlight
-              ? "bg-brand-green text-brand-bg hover:bg-brand-green/90"
-              : "border border-brand-border text-brand-white hover:border-brand-green/40"
+          className={`inline-flex items-center gap-2 font-syne font-bold text-sm px-5 py-3 rounded-full transition-all disabled:opacity-50 ${
+            isPopular
+              ? "bg-white text-clay-deep hover:-translate-y-0.5"
+              : "btn-clay-dark"
           }`}
         >
-          {loading ? (
-            <Loader2 size={14} className="animate-spin" />
-          ) : (
-            <>
-              BUY NOW <ArrowRight size={14} />
-            </>
-          )}
+          {loading ? <Loader2 size={14} className="animate-spin" /> : <>Buy Now <ArrowRight size={14} /></>}
         </button>
       </div>
     </div>
@@ -164,21 +117,17 @@ export default function StorePage() {
   const showBundles = activeTab === "all" || activeTab === "bundle";
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12">
-          <span className="font-dm-mono text-xs text-brand-green tracking-widest uppercase">
-            AI PRODUCT STORE
-          </span>
-          <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-6xl text-brand-white mt-3 mb-4">
-            Buy. Deploy.
-            <br />
-            <span className="text-gradient-green">Run Autonomously.</span>
+        <div className="mb-14">
+          <span className="clay-tag">AI Product Store</span>
+          <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">
+            Buy. Deploy.<br />
+            <span className="text-gradient-dark">Run Autonomously.</span>
           </h1>
-          <p className="font-instrument text-brand-white/50 text-lg max-w-xl">
-            Ready-to-deploy AI tools. Buy once, plug in your API key, and run
-            your business on autopilot.
+          <p className="font-instrument text-clay-mid text-lg max-w-xl">
+            Ready-to-deploy AI tools. Buy once, plug in your API key, and run your business on autopilot.
           </p>
         </div>
 
@@ -188,10 +137,10 @@ export default function StorePage() {
             <button
               key={tab.value}
               onClick={() => setActiveTab(tab.value)}
-              className={`font-dm-mono text-xs px-4 py-2 rounded-full border transition-all tracking-wider uppercase ${
+              className={`font-dm-mono text-xs px-5 py-2 rounded-full border transition-all tracking-wider uppercase ${
                 activeTab === tab.value
-                  ? "bg-brand-green text-brand-bg border-brand-green"
-                  : "border-brand-border text-brand-white/50 hover:border-brand-green/40 hover:text-brand-white"
+                  ? "bg-clay-deep text-white border-clay-deep shadow-clay-btn"
+                  : "border-clay-border text-clay-mid hover:border-clay-deep hover:text-clay-deep bg-white"
               }`}
             >
               {tab.label}
@@ -201,56 +150,35 @@ export default function StorePage() {
 
         {/* Products grid */}
         {activeTab !== "bundle" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-20">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-24">
+            {filteredProducts.map((p) => <ProductCard key={p.id} product={p} />)}
           </div>
         )}
 
         {/* Bundles */}
         {showBundles && (
           <div>
-            <div className="mb-8">
-              <span className="font-dm-mono text-xs text-brand-green tracking-widest uppercase">
-                SAVE MORE
-              </span>
-              <h2 className="font-syne font-black text-3xl sm:text-4xl text-brand-white mt-2">
-                Bundle Pricing
-              </h2>
-              <p className="font-instrument text-brand-white/50 mt-2">
-                Get more for less. Our bundles include everything you need to
-                launch an AI-powered business.
-              </p>
+            <div className="mb-10">
+              <span className="clay-tag">Save More</span>
+              <h2 className="font-syne font-black text-3xl sm:text-4xl text-clay-deep mt-4 mb-2 tracking-tight">Bundle Pricing</h2>
+              <p className="font-instrument text-clay-mid">Everything you need to launch an AI-powered business.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {BUNDLES.map((bundle) => (
-                <BundleCard
-                  key={bundle.id}
-                  bundle={bundle}
-                  highlight={bundle.highlight}
-                />
-              ))}
+              {BUNDLES.map((b) => <BundleCard key={b.id} bundle={b} />)}
             </div>
           </div>
         )}
 
-        {/* Bottom note */}
-        <div className="mt-16 p-6 rounded-xl border border-brand-border bg-brand-surface/30 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        {/* Custom build CTA */}
+        <div className="mt-16 clay-card p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5">
           <div className="flex-1">
-            <h3 className="font-syne font-bold text-brand-white mb-1">
-              Need a custom build?
-            </h3>
-            <p className="font-instrument text-sm text-brand-white/50">
-              Don&apos;t see what you need? We build custom AI solutions. Commission
-              anything from a single chatbot to a full SaaS platform.
+            <h3 className="font-syne font-bold text-clay-deep mb-1">Need a custom build?</h3>
+            <p className="font-instrument text-sm text-clay-mid">
+              Don&apos;t see what you need? We build custom AI solutions — from single chatbots to full SaaS platforms.
             </p>
           </div>
-          <a
-            href="/services"
-            className="shrink-0 inline-flex items-center gap-2 font-syne font-bold text-sm px-5 py-2.5 border border-brand-green/40 text-brand-green rounded hover:bg-brand-green/10 transition-all"
-          >
-            VIEW SERVICES <ArrowRight size={14} />
+          <a href="/services" className="btn-clay-light shrink-0 inline-flex items-center gap-2 px-5 py-3 text-sm">
+            View Services <ArrowRight size={14} />
           </a>
         </div>
       </div>

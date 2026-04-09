@@ -62,9 +62,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${syne.variable} ${dmMono.variable} ${instrumentSans.variable} bg-brand-bg text-brand-white antialiased`}
+        className={`${syne.variable} ${dmMono.variable} ${instrumentSans.variable}`}
       >
         <Navbar />
         <main>{children}</main>

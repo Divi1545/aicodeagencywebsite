@@ -1,34 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, CheckCircle } from "lucide-react";
 
 const SERVICES = [
-  "AI Chatbot",
-  "AI Callbot",
-  "Custom SaaS Platform",
-  "Web Scraper / Data Pipeline",
-  "Analytics Dashboard",
-  "AI Marketing Tools",
-  "Business Automation (AIOS)",
-  "Factory & IoT Robotics",
-  "Other / Not Sure",
+  "AI Chatbot", "AI Callbot", "Custom SaaS Platform",
+  "Web Scraper / Data Pipeline", "Analytics Dashboard",
+  "AI Marketing Tools", "Business Automation (AIOS)",
+  "Factory & IoT Robotics", "Other / Not Sure",
 ];
 
 interface QuoteModalProps {
@@ -38,20 +21,17 @@ interface QuoteModalProps {
 }
 
 export function QuoteModal({ open, onClose, defaultService }: QuoteModalProps) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName]       = useState("");
+  const [email, setEmail]     = useState("");
   const [service, setService] = useState(defaultService ?? "");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError]     = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!name || !email || !message) {
-      setError("Please fill in all required fields.");
-      return;
-    }
+    if (!name || !email || !message) { setError("Please fill in all required fields."); return; }
     setError("");
     setLoading(true);
     try {
@@ -62,121 +42,70 @@ export function QuoteModal({ open, onClose, defaultService }: QuoteModalProps) {
       });
       if (!res.ok) throw new Error("Failed");
       setSuccess(true);
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+    } catch { setError("Something went wrong. Please try again."); }
+    finally { setLoading(false); }
   }
 
   function handleClose() {
-    setSuccess(false);
-    setError("");
-    setName("");
-    setEmail("");
-    setService(defaultService ?? "");
-    setMessage("");
+    setSuccess(false); setError("");
+    setName(""); setEmail(""); setService(defaultService ?? ""); setMessage("");
     onClose();
   }
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="bg-brand-surface border-brand-border text-brand-white max-w-lg">
+      <DialogContent className="bg-white border-clay-border text-clay-deep max-w-lg rounded-[1.5rem] shadow-clay-xl">
         <DialogHeader>
-          <DialogTitle className="font-syne font-bold text-xl text-brand-white">
-            Get a Quote
-          </DialogTitle>
+          <DialogTitle className="font-syne font-bold text-xl text-clay-deep">Get a Quote</DialogTitle>
         </DialogHeader>
 
         {success ? (
           <div className="py-8 text-center">
-            <CheckCircle className="w-12 h-12 text-brand-green mx-auto mb-4" />
-            <h3 className="font-syne font-bold text-xl text-brand-white mb-2">
-              Request Sent!
-            </h3>
-            <p className="text-brand-white/60 font-instrument text-sm">
-              Thanks {name}! We&apos;ll get back to you within 24 hours.
-            </p>
-            <Button
-              onClick={handleClose}
-              className="mt-6 bg-brand-green text-brand-bg font-syne font-bold hover:bg-brand-green/90"
-            >
-              Close
-            </Button>
+            <div className="w-16 h-16 rounded-full bg-clay-faint border border-clay-border flex items-center justify-center mx-auto mb-4" style={{ boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }}>
+              <CheckCircle className="w-7 h-7 text-clay-deep" />
+            </div>
+            <h3 className="font-syne font-bold text-xl text-clay-deep mb-2">Request Sent!</h3>
+            <p className="font-instrument text-sm text-clay-mid">Thanks {name}! We&apos;ll get back to you within 24 hours.</p>
+            <button onClick={handleClose} className="btn-clay-dark mt-6 px-6 py-2.5 text-sm">Close</button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 mt-2">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block font-dm-mono text-xs text-brand-white/50 mb-1.5 tracking-wider uppercase">
-                  Name *
-                </label>
-                <Input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Your name"
-                  className="bg-brand-bg border-brand-border text-brand-white placeholder:text-brand-white/30 focus-visible:ring-brand-green"
-                />
+                <label className="block font-dm-mono text-[11px] text-clay-light mb-1.5 tracking-wider uppercase">Name *</label>
+                <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name"
+                  className="bg-clay-faint border-clay-border text-clay-deep placeholder:text-clay-light focus-visible:ring-clay-deep rounded-xl" />
               </div>
               <div>
-                <label className="block font-dm-mono text-xs text-brand-white/50 mb-1.5 tracking-wider uppercase">
-                  Email *
-                </label>
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
-                  className="bg-brand-bg border-brand-border text-brand-white placeholder:text-brand-white/30 focus-visible:ring-brand-green"
-                />
+                <label className="block font-dm-mono text-[11px] text-clay-light mb-1.5 tracking-wider uppercase">Email *</label>
+                <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com"
+                  className="bg-clay-faint border-clay-border text-clay-deep placeholder:text-clay-light focus-visible:ring-clay-deep rounded-xl" />
               </div>
             </div>
             <div>
-              <label className="block font-dm-mono text-xs text-brand-white/50 mb-1.5 tracking-wider uppercase">
-                Service
-              </label>
+              <label className="block font-dm-mono text-[11px] text-clay-light mb-1.5 tracking-wider uppercase">Service</label>
               <Select value={service} onValueChange={setService}>
-                <SelectTrigger className="bg-brand-bg border-brand-border text-brand-white focus:ring-brand-green">
+                <SelectTrigger className="bg-clay-faint border-clay-border text-clay-deep focus:ring-clay-deep rounded-xl">
                   <SelectValue placeholder="Select a service..." />
                 </SelectTrigger>
-                <SelectContent className="bg-brand-surface border-brand-border">
+                <SelectContent className="bg-white border-clay-border rounded-2xl">
                   {SERVICES.map((s) => (
-                    <SelectItem
-                      key={s}
-                      value={s}
-                      className="text-brand-white focus:bg-brand-green/10 focus:text-brand-green"
-                    >
-                      {s}
-                    </SelectItem>
+                    <SelectItem key={s} value={s} className="text-clay-deep focus:bg-clay-faint">{s}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
             <div>
-              <label className="block font-dm-mono text-xs text-brand-white/50 mb-1.5 tracking-wider uppercase">
-                Message *
-              </label>
-              <Textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+              <label className="block font-dm-mono text-[11px] text-clay-light mb-1.5 tracking-wider uppercase">Message *</label>
+              <Textarea value={message} onChange={(e) => setMessage(e.target.value)}
                 placeholder="Tell us about your project, timeline, and budget..."
-                rows={4}
-                className="bg-brand-bg border-brand-border text-brand-white placeholder:text-brand-white/30 focus-visible:ring-brand-green resize-none"
-              />
+                rows={4} className="bg-clay-faint border-clay-border text-clay-deep placeholder:text-clay-light focus-visible:ring-clay-deep rounded-xl resize-none" />
             </div>
-            {error && (
-              <p className="text-red-400 text-sm font-instrument">{error}</p>
-            )}
-            <Button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-brand-green text-brand-bg font-syne font-bold hover:bg-brand-green/90 disabled:opacity-50"
-            >
-              {loading ? (
-                <Loader2 size={16} className="animate-spin mr-2" />
-              ) : null}
-              {loading ? "Sending..." : "SEND REQUEST"}
-            </Button>
+            {error && <p className="text-red-500 text-sm font-instrument">{error}</p>}
+            <button type="submit" disabled={loading} className="btn-clay-dark w-full py-3 text-sm flex items-center justify-center gap-2 disabled:opacity-50">
+              {loading && <Loader2 size={14} className="animate-spin" />}
+              {loading ? "Sending..." : "Send Request"}
+            </button>
           </form>
         )}
       </DialogContent>
