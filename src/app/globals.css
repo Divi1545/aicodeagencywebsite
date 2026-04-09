@@ -30,7 +30,7 @@
 
 @layer base {
   * { @apply border-border; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background-color: #F0EFE9;
@@ -38,6 +38,8 @@
     font-family: var(--font-instrument-sans), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-width: 320px;
   }
 
   h1, h2, h3, h4, h5, h6 {

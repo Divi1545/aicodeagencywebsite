@@ -33,12 +33,12 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-16">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16" style={{ overflow: "clip" }}>
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-stone-200/60 blur-[100px] pointer-events-none" />
         <div className="absolute bottom-[5%] left-[-8%] w-[400px] h-[400px] rounded-full bg-stone-300/40 blur-[80px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
             {/* Text */}
             <div>
               <div className="inline-flex items-center gap-2 mb-7 clay-tag">
@@ -67,8 +67,8 @@ export default function HomePage() {
             </div>
 
             {/* 3D CSS Orb */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-72 h-72 sm:w-96 sm:h-96 animate-float-slow">
+            <div className="flex items-center justify-center px-8 lg:px-12">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80 animate-float-slow">
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{
@@ -84,14 +84,14 @@ export default function HomePage() {
                   className="orb-ring animate-spin-reverse"
                   style={{ width: "140%", height: "140%", transform: "translate(-50%,-50%) rotateX(70deg) rotateZ(45deg)", borderColor: "rgba(28,28,28,0.05)" }}
                 />
-                <div className="absolute -top-4 -right-4 glass-panel rounded-2xl px-3.5 py-2 shadow-clay-md">
-                  <span className="font-dm-mono text-[11px] text-clay-deep tracking-wider">BYOK READY</span>
+                <div className="absolute -top-3 right-2 glass-panel rounded-2xl px-3 py-1.5 shadow-clay-md">
+                  <span className="font-dm-mono text-[10px] text-clay-deep tracking-wider">BYOK READY</span>
                 </div>
-                <div className="absolute -bottom-4 -left-4 glass-panel rounded-2xl px-3.5 py-2 shadow-clay-md">
-                  <span className="font-dm-mono text-[11px] text-clay-deep tracking-wider">DEPLOY IN DAYS</span>
+                <div className="absolute -bottom-3 left-2 glass-panel rounded-2xl px-3 py-1.5 shadow-clay-md">
+                  <span className="font-dm-mono text-[10px] text-clay-deep tracking-wider">DEPLOY IN DAYS</span>
                 </div>
-                <div className="absolute top-1/2 -right-8 -translate-y-1/2 glass-panel rounded-2xl px-3.5 py-2 shadow-clay-md">
-                  <span className="font-dm-mono text-[11px] text-clay-deep tracking-wider">8+ LIVE</span>
+                <div className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/3 glass-panel rounded-2xl px-3 py-1.5 shadow-clay-md">
+                  <span className="font-dm-mono text-[10px] text-clay-deep tracking-wider">8+ LIVE</span>
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
           <h2 className="font-syne font-black text-4xl sm:text-5xl text-clay-deep mt-4 mb-3 tracking-tight">Our Services</h2>
           <p className="font-instrument text-clay-mid max-w-lg">Commission a custom build or buy a ready-made product and deploy today.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {SERVICES.map((s) => (
             <div key={s.name} className="clay-card clay-card-hover relative p-6">
               {s.tag && <span className="clay-tag absolute top-4 right-4">{s.tag}</span>}
