@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getStripe, STRIPE_PRICE_IDS } from "@/lib/stripe";
+import Stripe from "stripe";
+import { getStripe, STRIPE_PRICE_IDS, resolveStripePriceId } from "@/lib/stripe";
 import { PRODUCTS, BUNDLES } from "@/lib/products";
 
 export async function POST(req: NextRequest) {
@@ -37,13 +38,11 @@ export async function POST(req: NextRequest) {
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
-    // Check if we have a pre-configured Stripe Price ID
-    const stripePriceId = STRIPE_PRICE_IDS[productId];
+    const stripePriceId = resolveStripePriceId(STRIPE_PRICE_IDS[productId]);
 
     let session;
 
     if (stripePriceId) {
-      // Use pre-configured price
       session = await getStripe().checkout.sessions.create({
         mode: isSubscription ? "subscription" : "payment",
         line_items: [{ price: stripePriceId, quantity: 1 }],
@@ -54,41 +53,52 @@ export async function POST(req: NextRequest) {
         customer_creation: isSubscription ? undefined : "always",
       });
     } else {
-      // Create dynamic price (fallback)
+      const lineItem = isSubscription
+        ? {
+            quantity: 1 as const,
+            price_data: {
+              currency: "usd" as const,
+              unit_amount: unitAmount,
+              recurring: { interval: "month" as const },
+              product_data: {
+                name: productName,
+                description: `AI Code Agency — ${productName}`,
+              },
+            },
+          }
+        : {
+            quantity: 1 as const,
+            price_data: {
+              currency: "usd" as const,
+              unit_amount: unitAmount,
+              product_data: {
+                name: productName,
+                description: `AI Code Agency — ${productName}`,
+              },
+            },
+          };
+
       session = await getStripe().checkout.sessions.create({
         mode: isSubscription ? "subscription" : "payment",
-        line_items: [
-          {
-            price_data: isSubscription
-              ? undefined
-              : {
-                  currency: "usd",
-                  unit_amount: unitAmount,
-                  product_data: {
-                    name: productName,
-                    description: `AI Code Agency — ${productName}`,
-                  },
-                },
-            ...(isSubscription && stripePriceId
-              ? { price: stripePriceId }
-              : {}),
-            quantity: 1,
-          },
-        ],
+        line_items: [lineItem],
         success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${baseUrl}/cancel`,
         metadata: { productId, productName },
         billing_address_collection: "auto",
-        customer_creation: "always",
+        customer_creation: isSubscription ? undefined : "always",
       });
     }
 
     return NextResponse.json({ url: session.url });
   } catch (error) {
     console.error("Checkout error:", error);
-    return NextResponse.json(
-      { error: "Failed to create checkout session" },
-      { status: 500 }
-    );
+    const isDev = process.env.NODE_ENV === "development";
+    let message = "Payment setup failed. Please try again or contact support.";
+    if (error instanceof Stripe.errors.StripeError) {
+      message = isDev ? error.message : message;
+    } else if (error instanceof Error && isDev) {
+      message = error.message;
+    }
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

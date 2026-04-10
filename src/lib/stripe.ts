@@ -1,5 +1,13 @@
 import Stripe from "stripe";
 
+/** Valid Stripe Price IDs look like price_<alphanumeric>. Placeholders (e.g. price_...) are ignored. */
+export function resolveStripePriceId(raw: string | undefined): string | undefined {
+  if (raw == null) return undefined;
+  const id = raw.trim();
+  if (!id || !/^price_[a-zA-Z0-9]+$/.test(id)) return undefined;
+  return id;
+}
+
 // Lazy initialization — never runs at module import time
 let _stripe: Stripe | null = null;
 

@@ -20,9 +20,22 @@ async function handleBuy(productId: string, isBundle = false) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ productId, isBundle }),
   });
-  const data = await res.json();
-  if (data.url) window.location.href = data.url;
-  else alert("Failed to start checkout. Please try again.");
+  const data = (await res.json()) as { url?: string; error?: string };
+  if (data.url) {
+    window.location.href = data.url;
+    return;
+  }
+  const detail =
+    typeof data.error === "string" && data.error.length > 0
+      ? data.error
+      : !res.ok
+        ? `Request failed (${res.status}).`
+        : "";
+  alert(
+    detail
+      ? `Failed to start checkout.\n\n${detail}`
+      : "Failed to start checkout. Please try again."
+  );
 }
 
 function ProductCard({ product }: { product: (typeof PRODUCTS)[0] }) {
