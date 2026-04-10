@@ -20,16 +20,24 @@ async function handleBuy(productId: string, isBundle = false) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ productId, isBundle }),
   });
-  const data = (await res.json()) as { url?: string; error?: string };
+  const data = (await res.json()) as {
+    url?: string;
+    error?: string;
+    stripeCode?: string;
+  };
   if (data.url) {
     window.location.href = data.url;
     return;
   }
+  const codeSuffix =
+    typeof data.stripeCode === "string" && data.stripeCode.length > 0
+      ? `\n(Stripe: ${data.stripeCode})`
+      : "";
   const detail =
     typeof data.error === "string" && data.error.length > 0
-      ? data.error
+      ? `${data.error}${codeSuffix}`
       : !res.ok
-        ? `Request failed (${res.status}).`
+        ? `Request failed (${res.status}).${codeSuffix}`
         : "";
   alert(
     detail
