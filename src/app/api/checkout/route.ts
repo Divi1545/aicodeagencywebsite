@@ -4,14 +4,16 @@ import { getStripe, STRIPE_PRICE_IDS, resolveStripePriceId } from "@/lib/stripe"
 import { getServerBaseUrl } from "@/lib/site-url";
 import { PRODUCTS, BUNDLES } from "@/lib/products";
 
-function asStripeError(error: unknown): Stripe.errors.StripeError | null {
+type StripeErrorInstance = InstanceType<typeof Stripe.errors.StripeError>;
+
+function asStripeError(error: unknown): StripeErrorInstance | null {
   if (error instanceof Stripe.errors.StripeError) return error;
   if (
     error instanceof Error &&
     "statusCode" in error &&
     typeof (error as { statusCode?: unknown }).statusCode === "number"
   ) {
-    return error as Stripe.errors.StripeError;
+    return error as StripeErrorInstance;
   }
   return null;
 }
