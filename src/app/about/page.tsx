@@ -5,17 +5,17 @@ import { LIVE_PLATFORMS } from "@/lib/platforms";
 export const metadata: Metadata = {
   title: "About — Live Platforms | AI Code Agency",
   description:
-    "Live Sri Lanka platforms: IslandLoaf tourism & vendor super app, Authority13 AI workforce OS, AutoBid LK vehicle auctions, IslandLoaf Creator, Moments social layer, IslandLoaf Stay — built by AI Code Agency.",
+    "Live Sri Lanka platforms: IslandLoaf super app (tourism & local services), Authority13 AI workforce OS, AutoBid LK, IslandLoaf Creator, Moments spontaneous social layer, IslandLoaf Stay — built by AI Code Agency.",
   openGraph: {
     title: "About — Live Platforms | AI Code Agency",
     description:
-      "IslandLoaf, Authority13, AutoBid LK, IslandLoaf Creator, Moments, IslandLoaf Stay — production AI platforms from Negombo, Sri Lanka.",
+      "IslandLoaf, Authority13, AutoBid LK, IslandLoaf Creator, Moments, IslandLoaf Stay — production stack from Negombo, Sri Lanka.",
   },
 };
 
 const TIMELINE = [
   { year: "2023", event: "Founded AI Code Agency", desc: "Started building AI-powered web applications as a solo founder in Negombo." },
-  { year: "2024", event: "First SaaS platforms launched", desc: "IslandLoaf (tourism & vendor super app), Authority13, AutoBid LK, and companion IslandLoaf products went live — multiple production surfaces in 12 months." },
+  { year: "2024", event: "First SaaS platforms launched", desc: "IslandLoaf super app (tourism & local services), Authority13, AutoBid LK, and companion IslandLoaf products (Stay, Creator, Moments) went live — multiple production surfaces in 12 months." },
   { year: "2025", event: "AI Product Store launched", desc: "Productized the tech stack. Began selling ready-to-deploy AI tools to SMEs globally." },
   { year: "2026", event: "Scaling globally", desc: "Community programme, certifications, and regional expansion across Southeast Asia." },
 ];

@@ -3,6 +3,7 @@ export interface LivePlatform {
   name: string;
   emoji: string;
   tagline: string;
+  /** Primary copy for portfolio cards (long-form where provided). */
   description: string;
   url: string;
   status: "Live";
@@ -12,9 +13,9 @@ export const LIVE_PLATFORMS: LivePlatform[] = [
   {
     name: "IslandLoaf",
     emoji: "🏝️",
-    tagline: "Sri Lanka's AI-powered tourism & vendor marketplace",
+    tagline: "Sri Lanka's AI-powered super app for tourism & local services",
     description:
-      "A full-stack super app for Sri Lanka combining accommodation booking, ride-hailing, food delivery, social experiences, and creator tools. Vendors manage bookings, calendar, and earnings. Tourists discover and book stays, tours, transport, and wellness via an AI chatbot. 8% commission model.",
+      "IslandLoaf is Sri Lanka's all-in-one tourism and local services super app. Vendors manage services, bookings, calendar, and earnings. Tourists discover and book stays, tours, transport, and wellness via a Claude AI chatbot. Drivers handle rides and food deliveries with real-time GPS tracking. Powered by Anthropic Claude, Mapbox, and Supabase. A full-stack marketplace combining accommodation booking, ride-hailing, food delivery, social experiences, and a creator marketplace — AI at the core. 8% commission model. Built for vendors, tourists, and drivers.",
     url: "#",
     status: "Live",
   },
@@ -23,7 +24,7 @@ export const LIVE_PLATFORMS: LivePlatform[] = [
     emoji: "🤖",
     tagline: "AI Workforce Operating System",
     description:
-      "Deploy autonomous AI agent teams that run your business — vendor onboarding, marketing, reporting, scheduling, and follow-ups. Commander agent breaks down objectives and delegates to specialist sub-agents. Tiered pricing: Starter $49/mo, Pro $149/mo, Business $299/mo.",
+      "Deploy autonomous AI agent teams that run your business. Commander agent breaks down objectives and delegates to specialist sub-agents for marketing, ops, support, and analytics. Starter $49/mo, Pro $149/mo, Business $299/mo.",
     url: "#",
     status: "Live",
   },
@@ -32,34 +33,34 @@ export const LIVE_PLATFORMS: LivePlatform[] = [
     emoji: "🔨",
     tagline: "Real-time vehicle auction platform for Sri Lanka",
     description:
-      "Dealers list vehicles, buyers bid in real-time with countdown timers. Three roles: buyer, dealer, admin. Supabase-powered real-time bid updates, dealer verification, and secure payments.",
+      "Dealers list vehicles, buyers bid in real-time with countdown timers. Three roles: buyer, dealer, admin. Supabase Realtime bid updates, dealer verification required before listing, secure payments.",
     url: "#",
     status: "Live",
   },
   {
     name: "IslandLoaf Creator",
     emoji: "🎬",
-    tagline: "Influencer & creator marketplace for Sri Lanka tourism",
+    tagline: "The creator marketplace for Sri Lanka tourism",
     description:
-      "Brands (tourism vendors) post campaigns with prize pools. Creators apply, submit TikTok/Instagram/YouTube content, and compete — winners selected by performance metrics. IslandLoaf's free marketing engine. Live leaderboard, wallet payouts, AI content scoring via Claude.",
+      "IslandLoaf Creator is IslandLoaf's free marketing engine. Brands (tourism vendors) launch campaigns. Content creators across Sri Lanka apply, submit content links, and compete on a real-time leaderboard. Winners receive cash payouts via Stripe. AI scoring powered by Anthropic Claude. Built with Next.js 15, Supabase Realtime, and Stripe. Tourism vendors post campaigns with prize pools; creators submit TikTok/Instagram/YouTube content — winners selected by performance metrics.",
     url: "#",
     status: "Live",
   },
   {
     name: "Moments by IslandLoaf",
     emoji: "✨",
-    tagline: "Spontaneous social experiences layer for Sri Lanka",
+    tagline: "Spontaneous social experiences — discover what's happening near you",
     description:
-      "Discover time-limited social gatherings nearby. Users see active Moments on a map within 5km, join, chat temporarily, then leave. Moments auto-expire. No profiles, no follows — privacy-first and built for spontaneous real-world connection.",
+      "Moments by IslandLoaf lets users discover spontaneous, real-world gatherings nearby. Moments appear on a live map within 5km, have a start and end time, and auto-expire. There are no permanent profiles, no follower system, and no DMs — just genuine, in-person connection. Discover time-limited social gatherings: join, chat temporarily, and leave when the moment ends. No permanent data; privacy-first. Built mobile-first for GoodBarber WebView with Supabase Realtime and Mapbox.",
     url: "#",
     status: "Live",
   },
   {
     name: "IslandLoaf Stay",
     emoji: "🏡",
-    tagline: "Boutique accommodation booking for Sri Lanka — AI at the core",
+    tagline: "Boutique accommodation & experiences booking for Sri Lanka",
     description:
-      "Tourists browse and book stays, tours, vehicles, and wellness experiences via a Claude-powered AI chatbot. No traditional search — the chatbot handles the full booking flow conversationally. Vendors notified instantly. USD and LKR pricing supported. 8% commission model, collected centrally by ISVV.",
+      "IslandLoaf Stay is the traveler-facing booking platform for Sri Lanka. An AI chatbot powered by Anthropic Claude recommends experiences based on dates, interests, budget, and group size — then handles the entire booking flow conversationally. Stripe Checkout for payments. Vendors are notified instantly via the isvv backend. Tourists browse and book stays, tours, vehicles, and wellness via Claude; USD and LKR pricing supported. 8% commission model collected centrally.",
     url: "#",
     status: "Live",
   },

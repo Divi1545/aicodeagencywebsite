@@ -49,8 +49,8 @@ const SERVICES = [
   },
   {
     icon: Cpu, name: "Business Automation (AIOS)", tagline: "Authority13 — AI Workforce Operating System",
-    description: "Autonomous agent teams for vendor onboarding, marketing, reporting, scheduling, and follow-ups. Commander breaks down objectives and delegates to specialist sub-agents. Live product tiers: Starter $49/mo, Pro $149/mo, Business $299/mo.",
-    bullets: ["Commander + specialist delegation model", "Vendor onboarding & marketing automation", "Reporting, scheduling & follow-up runs", "Aligned with production Authority13 stack", "CRM updates & operational workflows", "Slack & email notifications"],
+    description: "Deploy autonomous AI agent teams that run your business. Commander agent breaks down objectives and delegates to specialist sub-agents for marketing, ops, support, and analytics. Starter $49/mo, Pro $149/mo, Business $299/mo.",
+    bullets: ["Commander + specialist sub-agents", "Marketing, ops, support & analytics coverage", "Same delegation model as production Authority13", "Tiered SaaS: Starter / Pro / Business", "CRM & workflow integrations", "Slack & email notifications"],
     tags: ["Authority13", "Agent AI", "Automation", "Claude", "Slack"],
     category: "Business Automation (AIOS)",
   },
