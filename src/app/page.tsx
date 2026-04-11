@@ -25,7 +25,7 @@ const SERVICES = [
   { icon: Database,        name: "Web Scrapers & Pipelines", desc: "Automated data collection. Google Maps, LinkedIn, directories.", tag: null },
   { icon: BarChart3,       name: "Analytics Dashboards",     desc: "Real-time business intelligence with actionable insights.", tag: null },
   { icon: Megaphone,       name: "AI Marketing Tools",       desc: "30 days of content in 10 minutes. Instagram, Facebook, SEO.", tag: null },
-  { icon: Cpu,             name: "Business Automation",      desc: "Authority13-powered agent teams that run your ops autonomously.", tag: "Flagship" },
+  { icon: Cpu,             name: "Business Automation",      desc: "Authority13 AI Workforce OS — commander + specialists for onboarding, marketing, reporting, scheduling, follow-ups.", tag: "Flagship" },
   { icon: Wrench,          name: "Factory & IoT Robotics",   desc: "Phase 4 — industrial automation and smart manufacturing.", tag: "Soon" },
 ];
 

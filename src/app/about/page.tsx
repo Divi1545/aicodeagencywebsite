@@ -1,17 +1,21 @@
+import type { Metadata } from "next";
 import { ExternalLink, MapPin, Zap } from "lucide-react";
+import { LIVE_PLATFORMS } from "@/lib/platforms";
 
-const PLATFORMS = [
-  { name: "IslandLoaf",           emoji: "🍞", description: "Sri Lanka's first AI-powered artisan food marketplace. Connecting local bakers, chefs, and food creators island-wide.", url: "#", status: "Live" },
-  { name: "Authority13",          emoji: "🤖", description: "AI workforce SaaS. Deploy autonomous agent teams that run your business — outreach, reporting, follow-ups.", url: "#", status: "Live" },
-  { name: "AutoBid LK",           emoji: "🔨", description: "Real-time online auction platform for Sri Lanka. Live bidding, countdown timers, and secure payments.", url: "#", status: "Live" },
-  { name: "IslandLoaf Creator",   emoji: "🎬", description: "Influencer & creator marketplace for Sri Lanka's food and lifestyle creators. Campaign management and analytics.", url: "#", status: "Live" },
-  { name: "Moments by IslandLoaf",emoji: "📸", description: "AI-powered event photography marketplace. Book photographers, receive AI-edited galleries, share instantly.", url: "#", status: "Live" },
-  { name: "IslandLoaf Stay",      emoji: "🏠", description: "Boutique accommodation booking for Sri Lanka. Direct bookings, no commission layers, AI-powered recommendations.", url: "#", status: "Live" },
-];
+export const metadata: Metadata = {
+  title: "About — Live Platforms | AI Code Agency",
+  description:
+    "Live Sri Lanka platforms: IslandLoaf tourism & vendor super app, Authority13 AI workforce OS, AutoBid LK vehicle auctions, IslandLoaf Creator, Moments social layer, IslandLoaf Stay — built by AI Code Agency.",
+  openGraph: {
+    title: "About — Live Platforms | AI Code Agency",
+    description:
+      "IslandLoaf, Authority13, AutoBid LK, IslandLoaf Creator, Moments, IslandLoaf Stay — production AI platforms from Negombo, Sri Lanka.",
+  },
+};
 
 const TIMELINE = [
   { year: "2023", event: "Founded AI Code Agency", desc: "Started building AI-powered web applications as a solo founder in Negombo." },
-  { year: "2024", event: "First SaaS platforms launched", desc: "IslandLoaf, Authority13, and AutoBid LK went live. 3 production platforms in 12 months." },
+  { year: "2024", event: "First SaaS platforms launched", desc: "IslandLoaf (tourism & vendor super app), Authority13, AutoBid LK, and companion IslandLoaf products went live — multiple production surfaces in 12 months." },
   { year: "2025", event: "AI Product Store launched", desc: "Productized the tech stack. Began selling ready-to-deploy AI tools to SMEs globally." },
   { year: "2026", event: "Scaling globally", desc: "Community programme, certifications, and regional expansion across Southeast Asia." },
 ];
@@ -108,13 +112,14 @@ export default function AboutPage() {
           <h2 className="font-syne font-black text-3xl sm:text-4xl text-clay-deep mt-4 mb-3 tracking-tight">Live Platforms</h2>
           <p className="font-instrument text-clay-mid mb-10">Real products, live in production, built entirely by AI Code Agency.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PLATFORMS.map((p) => (
+            {LIVE_PLATFORMS.map((p) => (
               <div key={p.name} className="clay-card clay-card-hover p-6">
                 <div className="flex items-start justify-between mb-3">
                   <span className="text-2xl">{p.emoji}</span>
                   <span className="clay-tag">{p.status}</span>
                 </div>
-                <h3 className="font-syne font-bold text-base text-clay-deep mb-2">{p.name}</h3>
+                <h3 className="font-syne font-bold text-base text-clay-deep mb-1">{p.name}</h3>
+                <p className="font-syne font-semibold text-xs text-clay-deep/90 leading-snug mb-2">{p.tagline}</p>
                 <p className="font-instrument text-sm text-clay-mid leading-relaxed mb-4">{p.description}</p>
                 <a href={p.url} className="inline-flex items-center gap-1.5 font-dm-mono text-xs text-clay-light hover:text-clay-deep transition-colors">
                   Visit Platform <ExternalLink size={10} />

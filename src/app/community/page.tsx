@@ -19,7 +19,7 @@ const PROGRAMMES = [
     cta: "Get Free Templates" },
   { icon: Gift, name: "Free Tools for Sri Lankan SMEs", tagline: "5 free chatbot deployments per month",
     description: "Every month we deploy 5 free AI chatbots for qualifying Sri Lankan small businesses. No catch — just our way of giving back to the local economy.",
-    features: ["5 free deployments per month (limited slots)", "Tourism, food, retail, services businesses", "Basic chatbot on WhatsApp or web", "1 month of free hosting", "Setup walkthrough included", "Apply by submitting your business"],
+    features: ["5 free deployments per month (limited slots)", "Tourism, hospitality, retail, services businesses", "Basic chatbot on WhatsApp or web", "1 month of free hosting", "Setup walkthrough included", "Apply by submitting your business"],
     cta: "Apply for Free Bot" },
 ];
 
