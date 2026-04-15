@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { VercelTriangle } from "@/components/icons/VercelTriangle";
 
 const navLinks = [
   { href: "/store",     label: "AI Store" },
@@ -35,15 +36,26 @@ export function Navbar() {
         )}
       >
         <div className="nav-island px-5 py-2.5 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="font-syne font-black text-lg text-clay-deep tracking-tight">
-              AI<span className="text-clay-mid">CODE</span>
-            </span>
-            <span className="hidden sm:inline font-dm-mono text-[10px] text-clay-light border border-clay-border px-2 py-0.5 rounded-full">
-              AGENCY
-            </span>
-          </Link>
+          {/* Logo: Vercel mark (links to Vercel) + wordmark (home) */}
+          <div className="flex items-center gap-2.5 shrink-0">
+            <a
+              href="https://vercel.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-clay-deep hover:opacity-75 transition-opacity p-0.5 -m-0.5"
+              aria-label="Vercel — visit vercel.com"
+            >
+              <VercelTriangle className="h-[18px] w-[17px]" />
+            </a>
+            <Link href="/" className="flex items-center gap-2">
+              <span className="font-syne font-black text-lg text-clay-deep tracking-tight">
+                AI<span className="text-clay-mid">CODE</span>
+              </span>
+              <span className="hidden sm:inline font-dm-mono text-[10px] text-clay-light border border-clay-border px-2 py-0.5 rounded-full">
+                AGENCY
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop links */}
           <nav className="hidden md:flex items-center gap-0.5">

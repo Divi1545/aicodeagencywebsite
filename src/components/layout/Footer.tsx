@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { VercelTriangle } from "@/components/icons/VercelTriangle";
 
 const links = {
   Products: [
@@ -27,14 +28,25 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand col */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-5">
-              <span className="font-syne font-black text-2xl text-white">
-                AI<span className="text-white/50">CODE</span>
-              </span>
-              <span className="font-dm-mono text-[10px] text-white/30 border border-white/10 px-2 py-0.5 rounded-full">
-                AGENCY
-              </span>
-            </Link>
+            <div className="flex items-center gap-3 mb-5">
+              <a
+                href="https://vercel.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:opacity-80 transition-opacity shrink-0"
+                aria-label="Vercel — visit vercel.com"
+              >
+                <VercelTriangle className="h-6 w-[22px]" />
+              </a>
+              <Link href="/" className="flex items-center gap-2">
+                <span className="font-syne font-black text-2xl text-white">
+                  AI<span className="text-white/50">CODE</span>
+                </span>
+                <span className="font-dm-mono text-[10px] text-white/30 border border-white/10 px-2 py-0.5 rounded-full">
+                  AGENCY
+                </span>
+              </Link>
+            </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs font-instrument">
               Sri Lanka&apos;s premier AI development company. We build chatbots,
               callbots, SaaS platforms, scrapers, and automation systems that
