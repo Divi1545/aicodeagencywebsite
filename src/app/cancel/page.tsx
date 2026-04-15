@@ -20,8 +20,8 @@ export default function CancelPage() {
           <p className="font-instrument text-sm text-clay-mid mb-4">
             We&apos;re happy to help. Send us a message and we&apos;ll recommend the best solution — no pressure.
           </p>
-          <a href="mailto:hello@aicodeagency.com" className="inline-flex items-center gap-2 font-syne font-bold text-sm text-clay-deep hover:underline">
-            <MessageCircle size={14} /> hello@aicodeagency.com
+          <a href="mailto:info@aicodeagency.org" className="inline-flex items-center gap-2 font-syne font-bold text-sm text-clay-deep hover:underline">
+            <MessageCircle size={14} /> info@aicodeagency.org
           </a>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -44,7 +44,7 @@ export default function SuccessPage() {
         </div>
         <p className="mt-8 font-dm-mono text-xs text-clay-light">
           Questions?{" "}
-          <a href="mailto:hello@aicodeagency.com" className="text-clay-deep hover:underline">hello@aicodeagency.com</a>
+          <a href="mailto:info@aicodeagency.org" className="text-clay-deep hover:underline">info@aicodeagency.org</a>
         </p>
       </div>
     </div>

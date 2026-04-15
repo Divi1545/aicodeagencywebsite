@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "AI Code Agency — We Build AI That Actually Works",
     description:
       "IslandLoaf super app stack, Authority13, AutoBid LK, Moments, IslandLoaf Stay & Creator — plus ready-to-deploy AI kits from Sri Lanka.",
-    url: "https://aicodeagency.com",
+    url: "https://aicodeagency.org",
     siteName: "AI Code Agency",
     locale: "en_US",
     type: "website",

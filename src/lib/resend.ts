@@ -20,7 +20,7 @@ export async function sendOrderConfirmation({
   sessionId: string;
 }) {
   return getResend().emails.send({
-    from: "AI Code Agency <orders@aicodeagency.com>",
+    from: "AI Code Agency <orders@aicodeagency.org>",
     to,
     subject: `Order Confirmed: ${productName} — AI Code Agency`,
     html: `
@@ -68,10 +68,10 @@ export async function sendOrderConfirmation({
               </div>
             </div>
             <p>Our team will reach out within <strong style="color: #F4F2EE">24 hours</strong> to onboard you and get your deployment started.</p>
-            <a href="https://aicodeagency.com/store" class="cta">Browse More Products →</a>
+            <a href="https://aicodeagency.org/store" class="cta">Browse More Products →</a>
             <div class="footer">
               <p>AI Code Agency Pvt Ltd · Negombo, Sri Lanka</p>
-              <p>Questions? Reply to this email or contact us at hello@aicodeagency.com</p>
+              <p>Questions? Reply to this email or contact us at info@aicodeagency.org</p>
             </div>
           </div>
         </body>
@@ -92,8 +92,8 @@ export async function sendQuoteNotification({
   message: string;
 }) {
   return getResend().emails.send({
-    from: "AI Code Agency <noreply@aicodeagency.com>",
-    to: "hello@aicodeagency.com",
+    from: "AI Code Agency <noreply@aicodeagency.org>",
+    to: "info@aicodeagency.org",
     subject: `New Quote Request: ${service} — from ${name}`,
     html: `
       <div style="font-family: monospace; background: #060608; color: #F4F2EE; padding: 32px; max-width: 600px; margin: 0 auto;">
