@@ -175,6 +175,26 @@ export const PRODUCTS: Product[] = [
       "Mobile-responsive dashboards",
     ],
   },
+  {
+    id: "fleet-fraud-dashboard",
+    slug: "fleet-fraud-dashboard",
+    emoji: "🚛",
+    category: "platform",
+    name: "Fleet Fraud Detection Dashboard",
+    description:
+      "Internal admin tool for refrigerated trucking fleets — Wedage Fleet pattern: detects fuel theft while engines are off using per-vehicle rolling baselines (Welford's algorithm), grades severity LOW/MEDIUM/HIGH, fires Claude AI explanations + Telegram alerts in real time, and delivers a daily fleet briefing every morning. Wialon GPS integration, Vercel Cron, Next.js 14 App Router + Supabase + Prisma.",
+    price: 699,
+    priceLabel: "$699",
+    isSubscription: false,
+    features: [
+      "Engine-off fuel drop anomaly detection (2σ threshold)",
+      "Per-vehicle self-learning baseline (Welford's algorithm)",
+      "Claude AI fraud explanation + daily fleet briefing",
+      "Real-time Telegram alerts with severity grading",
+      "Wialon GPS tracker API integration",
+      "Full dashboard: vehicles, alerts, analytics, sync logs, settings",
+    ],
+  },
 ];
 
 export interface Bundle {
@@ -221,7 +241,7 @@ export const BUNDLES: Bundle[] = [
     priceLabel: "$1,999",
     description: "White-label everything. Resell. Run your own AI agency.",
     includes: [
-      "All 8 products — white-label licensed",
+      "All 9 products — white-label licensed",
       "Authority13 Business tier — 12 months ($299/mo live product)",
       "Priority support & onboarding",
       "Custom branding included",

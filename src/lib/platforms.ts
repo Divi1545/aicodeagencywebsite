@@ -64,4 +64,13 @@ export const LIVE_PLATFORMS: LivePlatform[] = [
     url: "#",
     status: "Live",
   },
+  {
+    name: "Wedage Fleet",
+    emoji: "🚛",
+    tagline: "Real-time fuel theft detection for refrigerated trucking fleets",
+    description:
+      "Wedage Fleet is an internal admin tool for Wedage & Company, a refrigerated trucking business in Sri Lanka. Every 15 minutes a Vercel Cron job pulls sensor data from Wialon GPS trackers. When a driver parks and the engine goes off, the system measures the fuel drop across that window against each truck's own rolling baseline built with Welford's online algorithm. Drops more than 2 standard deviations above normal are flagged — LOW, MEDIUM, or HIGH severity — and Claude AI writes a plain-English explanation of what happened and what action to take. The manager receives an instant Telegram alert plus a daily fleet briefing every morning at 7 AM Colombo time. Built on Next.js 14 App Router, Supabase + Prisma, and Anthropic Claude.",
+    url: "#",
+    status: "Live",
+  },
 ];

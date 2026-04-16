@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ExternalLink, MapPin, Zap } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, MapPin } from "lucide-react";
 import { LIVE_PLATFORMS } from "@/lib/platforms";
 
 export const metadata: Metadata = {
@@ -63,19 +64,20 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          {/* Photo placeholder */}
+          {/* Founder photo */}
           <div className="flex justify-center">
             <div
-              className="w-full aspect-square max-w-sm rounded-[2rem] border border-clay-border bg-clay-faint flex flex-col items-center justify-center"
-              style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.05)" }}
+              className="w-full max-w-sm rounded-[2rem] overflow-hidden border border-clay-border"
+              style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06)" }}
             >
-              <div
-                className="w-20 h-20 rounded-full flex items-center justify-center mb-4"
-                style={{ background: "linear-gradient(145deg, #f0efe9, #e2e1d8)", boxShadow: "4px 4px 16px rgba(0,0,0,0.08), -2px -2px 8px rgba(255,255,255,0.9)" }}
-              >
-                <Zap size={28} className="text-clay-charcoal" />
-              </div>
-              <p className="font-dm-mono text-xs text-clay-light text-center px-8">[Founder photo — add to /public/founder.jpg]</p>
+              <Image
+                src="/founder.jpg"
+                alt="Divindu Edirisinghe — Founder, AI Code Agency"
+                width={480}
+                height={480}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
             </div>
           </div>
         </div>
