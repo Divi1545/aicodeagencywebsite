@@ -60,6 +60,7 @@ export async function POST(req: NextRequest) {
     if (stripePriceId) {
       session = await getStripe().checkout.sessions.create({
         mode: isSubscription ? "subscription" : "payment",
+        payment_method_types: ["card"],
         line_items: [{ price: stripePriceId, quantity: 1 }],
         success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${baseUrl}/cancel`,
@@ -94,6 +95,7 @@ export async function POST(req: NextRequest) {
 
       session = await getStripe().checkout.sessions.create({
         mode: isSubscription ? "subscription" : "payment",
+        payment_method_types: ["card"],
         line_items: [lineItem],
         success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${baseUrl}/cancel`,
