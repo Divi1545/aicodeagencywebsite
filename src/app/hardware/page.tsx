@@ -1,22 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const TICKER_ITEMS = [
   "AI CONCIERGE",
   "40 LANGUAGES",
-  "OFFLINE LLM",
+  "OFFLINE INTELLIGENCE",
   "FREE HARDWARE",
   "CLOUD LOCKED",
-  "ESP32-S3",
-  "ROCKCHIP RK3588",
+  "ENTERPRISE GRADE",
+  "EDGE AI",
   "SUBSCRIBE & DEPLOY",
 ];
 
 const STATS = [
-  { value: "40+",   label: "Languages" },
-  { value: "$35",   label: "Hardware Cost" },
-  { value: "100%",  label: "Offline Option" },
-  { value: "9",     label: "Product Lines" },
+  { value: "40+",  label: "Languages" },
+  { value: "Zero", label: "Cloud Exposure" },
+  { value: "100%", label: "Offline Capable" },
+  { value: "9",    label: "Product Lines" },
 ];
 
 const PRODUCTS = [
@@ -25,58 +26,70 @@ const PRODUCTS = [
     title: "AiDesk S1",
     subtitle: "Lobby Concierge",
     description:
-      "ESP32-S3 robot face box. Hotel and office lobby AI assistant. 40 languages. Powered by Claude AI. Visitor chat, FAQ, booking integration.",
-    price: "From $100/mo",
+      "Compact AI concierge designed for hotel and office lobbies. Handles visitor check-in, FAQ, booking integrations, and live chat across 40 languages — powered by Claude AI.",
+    price: "From $399/mo",
+    image: "/hardware/aidesk-s1.jpg",
+    hasImage: true,
   },
   {
     badge: "OFFLINE",
     title: "AiCore Pro",
     subtitle: "Private LLM Box",
     description:
-      "Rockchip RK3588. 16GB RAM. 6 TOPS NPU. Runs Qwen 3B fully offline. For banks, hospitals, law firms. Your data never leaves the building.",
-    price: "From $300/mo or $1,200 one-time",
+      "On-device large language model with 16GB RAM and a dedicated neural processing unit. Runs a full AI assistant entirely air-gapped. For banks, hospitals, and law firms. Your data never leaves the building.",
+    price: "From $799/mo or $3,500 one-time",
+    image: "/hardware/aicore-pro.jpg",
+    hasImage: true,
   },
   {
     badge: "NEW",
     title: "AiVoice Home",
     subtitle: "Offline Speaker",
     description:
-      "Wake word activated. No Alexa. No Google. Fully local voice AI. Sinhala + English + 38 other languages. 5W power draw.",
-    price: "$280 one-time",
+      "Wake-word activated. No Alexa. No Google. Fully local voice AI running on-device. Sinhala, English, and 38 other languages. 5W power draw.",
+    price: "$590 one-time",
+    image: "/hardware/aivoice-home.jpg",
+    hasImage: true,
   },
   {
     badge: "ENTERPRISE",
     title: "AiGuard",
     subtitle: "Vision AI",
     description:
-      "Offline face recognition, perimeter alerts, visitor logging. RK3588 NPU handles everything on-device. No footage goes to the cloud.",
-    price: "From $500/mo",
+      "Offline face recognition, perimeter alerts, and visitor logging — all processed on-device by a dedicated vision NPU. No footage is ever sent to the cloud.",
+    price: "From $999/mo",
+    image: null,
+    hasImage: false,
   },
   {
     badge: "NEW",
     title: "AiDoc Vault",
     subtitle: "Document AI",
     description:
-      "Feed it your PDFs, contracts, and records. Query privately offline. Built for legal firms, clinics, and government offices.",
-    price: "$800 one-time",
+      "Feed it your PDFs, contracts, and records. Query your entire document library privately, offline. Built for legal firms, clinics, and government offices.",
+    price: "$1,800 one-time",
+    image: null,
+    hasImage: false,
   },
   {
     badge: "SOON",
     title: "AiClassroom",
     subtitle: "Offline Tutor",
     description:
-      "AI tutor for schools with unreliable internet. Local LLM, Sinhala curriculum support, runs on 15W.",
+      "AI tutor for schools with unreliable internet. On-device language model, Sinhala curriculum support, 15W power draw. Designed to work anywhere.",
     price: "Coming soon",
+    image: null,
+    hasImage: false,
   },
 ];
 
 const REGIONS = [
-  { region: "Sri Lanka",        price: "$100–150/mo",    badge: "LOCAL" },
-  { region: "Southeast Asia",   price: "$250–350/mo",    badge: "APAC" },
-  { region: "Middle East",      price: "$600–800/mo",    badge: "PREMIUM" },
-  { region: "Europe / UK",      price: "$800–1,200/mo",  badge: "PREMIUM" },
-  { region: "USA / Canada",     price: "$1,000–1,500/mo", badge: "ENTERPRISE" },
-  { region: "Australia / NZ",   price: "$600–900/mo",    badge: "PREMIUM" },
+  { region: "Sri Lanka",       price: "$399–499/mo",    badge: "LOCAL" },
+  { region: "Southeast Asia",  price: "$499–699/mo",    badge: "APAC" },
+  { region: "Middle East",     price: "$899–1,200/mo",  badge: "PREMIUM" },
+  { region: "Europe / UK",     price: "$1,200–1,800/mo", badge: "PREMIUM" },
+  { region: "USA / Canada",    price: "$1,500–2,500/mo", badge: "ENTERPRISE" },
+  { region: "Australia / NZ",  price: "$999–1,500/mo",  badge: "PREMIUM" },
 ];
 
 const INCLUDED = [
@@ -111,7 +124,7 @@ export default function HardwarePage() {
               Your Building.
             </h1>
             <p className="font-instrument text-lg text-clay-mid leading-relaxed mb-8 max-w-xl">
-              Pre-configured AI concierge boxes built on Chinese silicon. 40+ languages. Cloud-locked subscription. Free hardware on every plan.
+              Enterprise-grade AI concierge devices. 40+ languages. Air-gapped offline option. Free hardware on every subscription plan.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="btn-clay-dark inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm">
@@ -122,7 +135,7 @@ export default function HardwarePage() {
               </a>
             </div>
             <p className="mt-6 font-dm-mono text-xs text-clay-light tracking-wider">
-              Ships from Galle, Sri Lanka 🇱🇰 · Free hardware on subscription plans
+              Ships from Galle, Sri Lanka 🇱🇰 · Free hardware on all subscription plans
             </p>
           </div>
         </div>
@@ -158,31 +171,52 @@ export default function HardwarePage() {
         <div className="mb-14">
           <span className="clay-tag">Product Range</span>
           <h2 className="font-syne font-black text-4xl sm:text-5xl text-clay-deep mt-4 mb-3 tracking-tight leading-[1.05]">
-            Three systems.<br />One mission.
+            Six devices.<br />One mission.
           </h2>
           <p className="font-instrument text-clay-mid max-w-lg">
-            Every box is pre-flashed, pre-tested, and ready to deploy. Subscribe and ship — or buy outright.
+            Every box is pre-configured and ready to deploy. Subscribe and receive the hardware free — or purchase outright.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {PRODUCTS.map((p) => (
-            <div key={p.title} className="clay-card clay-card-hover relative p-6 flex flex-col">
-              <span className="clay-tag absolute top-4 right-4">{p.badge}</span>
-              <div
-                className="w-11 h-11 rounded-2xl mb-5 flex items-center justify-center shrink-0"
-                style={{
-                  background: "linear-gradient(145deg, #f8f8f5, #e8e7e0)",
-                  boxShadow: "4px 4px 12px rgba(0,0,0,0.08), -2px -2px 6px rgba(255,255,255,0.9)",
-                }}
-              >
-                <span className="font-syne font-black text-[11px] text-clay-charcoal">AI</span>
-              </div>
-              <h3 className="font-syne font-bold text-[15px] text-clay-deep mb-0.5">{p.title}</h3>
-              <p className="font-dm-mono text-[10px] text-clay-light tracking-widest uppercase mb-3">{p.subtitle}</p>
-              <p className="font-instrument text-sm text-clay-mid leading-relaxed mb-5 flex-1">{p.description}</p>
-              <div className="pt-4 border-t border-clay-border">
-                <span className="font-syne font-bold text-sm text-clay-deep">{p.price}</span>
+            <div key={p.title} className="clay-card clay-card-hover relative flex flex-col overflow-hidden">
+              {/* Product image */}
+              {p.hasImage && p.image ? (
+                <div className="relative w-full h-52 bg-clay-faint overflow-hidden">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="w-full h-52 flex items-center justify-center"
+                  style={{
+                    background: "linear-gradient(145deg, #f8f8f5, #e8e7e0)",
+                  }}
+                >
+                  <span className="font-syne font-black text-2xl text-clay-border">{p.title}</span>
+                </div>
+              )}
+
+              {/* Card body */}
+              <div className="p-6 flex flex-col flex-1">
+                <span className="clay-tag absolute top-4 right-4">{p.badge}</span>
+                <h3 className="font-syne font-bold text-[15px] text-clay-deep mb-0.5 pr-16">{p.title}</h3>
+                <p className="font-dm-mono text-[10px] text-clay-light tracking-widest uppercase mb-3">{p.subtitle}</p>
+                <p className="font-instrument text-sm text-clay-mid leading-relaxed mb-5 flex-1">{p.description}</p>
+                <div className="pt-4 border-t border-clay-border flex items-center justify-between">
+                  <span className="font-syne font-bold text-sm text-clay-deep">{p.price}</span>
+                  {p.price !== "Coming soon" && (
+                    <Link href="/contact" className="font-dm-mono text-[10px] tracking-widest text-clay-mid hover:text-clay-deep transition-colors uppercase">
+                      Enquire →
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}
