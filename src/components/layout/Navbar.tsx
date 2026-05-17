@@ -9,6 +9,7 @@ import { VercelTriangle } from "@/components/icons/VercelTriangle";
 
 const navLinks = [
   { href: "/store",     label: "AI Store" },
+  { href: "/hardware",  label: "Hardware" },
   { href: "/services",  label: "Services" },
   { href: "/about",     label: "About" },
   { href: "/community", label: "Community" },
