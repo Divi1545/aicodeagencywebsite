@@ -28,7 +28,7 @@ const PRODUCTS = [
     description:
       "Compact AI concierge designed for hotel and office lobbies. Handles visitor check-in, FAQ, booking integrations, and live chat across 40 languages — powered by Claude AI.",
     price: "From $399/mo",
-    image: "/hardware/aidesk-s1.jpg",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3D4qFT2UAJY0w5nC1lP9i4k8xxe/hf_20260517_060903_56108a47-13f3-4e0e-8f1a-6a010321635b.png",
     hasImage: true,
   },
   {
@@ -38,7 +38,7 @@ const PRODUCTS = [
     description:
       "On-device large language model with 16GB RAM and a dedicated neural processing unit. Runs a full AI assistant entirely air-gapped. For banks, hospitals, and law firms. Your data never leaves the building.",
     price: "From $799/mo or $3,500 one-time",
-    image: "/hardware/aicore-pro.jpg",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3D4qFT2UAJY0w5nC1lP9i4k8xxe/hf_20260517_060755_36d70964-1d75-4b69-a125-c1dafdfd5aec.png",
     hasImage: true,
   },
   {
@@ -48,7 +48,7 @@ const PRODUCTS = [
     description:
       "Wake-word activated. No Alexa. No Google. Fully local voice AI running on-device. Sinhala, English, and 38 other languages. 5W power draw.",
     price: "$590 one-time",
-    image: "/hardware/aivoice-home.jpg",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3D4qFT2UAJY0w5nC1lP9i4k8xxe/hf_20260517_060757_45421c66-f19b-42ea-b000-e79beb51720e.png",
     hasImage: true,
   },
   {
@@ -83,14 +83,6 @@ const PRODUCTS = [
   },
 ];
 
-const REGIONS = [
-  { region: "Sri Lanka",       price: "$399–499/mo",    badge: "LOCAL" },
-  { region: "Southeast Asia",  price: "$499–699/mo",    badge: "APAC" },
-  { region: "Middle East",     price: "$899–1,200/mo",  badge: "PREMIUM" },
-  { region: "Europe / UK",     price: "$1,200–1,800/mo", badge: "PREMIUM" },
-  { region: "USA / Canada",    price: "$1,500–2,500/mo", badge: "ENTERPRISE" },
-  { region: "Australia / NZ",  price: "$999–1,500/mo",  badge: "PREMIUM" },
-];
 
 const INCLUDED = [
   "Physical AI box — hardware delivered free on subscription",
@@ -234,28 +226,8 @@ export default function HardwarePage() {
         </div>
       </section>
 
-      {/* Regional Pricing */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
-        <div className="mb-14">
-          <span className="clay-tag">Global Pricing</span>
-          <h2 className="font-syne font-black text-4xl sm:text-5xl text-clay-deep mt-4 mb-3 tracking-tight leading-[1.05]">
-            One box.<br />Priced for<br />your market.
-          </h2>
-          <p className="font-instrument text-clay-mid max-w-lg">
-            Same hardware. Same dashboard. Priced by region so every market gets fair access.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-          {REGIONS.map((r) => (
-            <div key={r.region} className="clay-card clay-card-hover relative p-6">
-              <span className="clay-tag absolute top-4 right-4">{r.badge}</span>
-              <div className="font-syne font-bold text-[15px] text-clay-deep mb-1 pr-16">{r.region}</div>
-              <div className="font-syne font-black text-2xl text-clay-deep">{r.price}</div>
-            </div>
-          ))}
-        </div>
-
+      {/* Included note */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="clay-card p-6 border border-clay-border">
           <p className="font-instrument text-sm text-clay-mid leading-relaxed">
             All plans include: physical hardware (free), dashboard access, 40-language Claude AI backend, firmware updates, conversation analytics, and cloud-lock subscription management.
