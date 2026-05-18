@@ -58,8 +58,8 @@ const PRODUCTS = [
     description:
       "Offline face recognition, perimeter alerts, and visitor logging — all processed on-device by a dedicated vision NPU. No footage is ever sent to the cloud.",
     price: "From $999/mo",
-    image: null,
-    hasImage: false,
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3D4qFT2UAJY0w5nC1lP9i4k8xxe/hf_20260518_045700_58b5ac15-c4a4-4cf8-9069-6cc07f935b3b.png",
+    hasImage: true,
   },
   {
     badge: "NEW",
