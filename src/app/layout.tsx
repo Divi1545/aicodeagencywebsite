@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Syne, DM_Mono, Instrument_Sans } from "next/font/google";
+import { Fraunces, DM_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
 });
 
 const dmMono = DM_Mono({
@@ -69,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${dmMono.variable} ${instrumentSans.variable}`}
+        className={`${fraunces.variable} ${dmMono.variable} ${instrumentSans.variable}`}
       >
         <Navbar />
         <main>{children}</main>

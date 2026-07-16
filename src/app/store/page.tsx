@@ -67,7 +67,7 @@ function ProductCard({ product }: { product: (typeof PRODUCTS)[0] }) {
         ))}
       </ul>
       <div className="flex items-center justify-between mt-auto pt-4 border-t border-clay-border">
-        <span className="font-syne font-black text-2xl text-clay-deep">{product.priceLabel}</span>
+        <span className="font-syne font-semibold text-2xl text-clay-deep">{product.priceLabel}</span>
         <button
           onClick={onBuy}
           disabled={loading}
@@ -99,7 +99,7 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[0] }) {
           <Star size={10} fill="currentColor" /> {bundle.highlight}
         </div>
       )}
-      <h3 className={`font-syne font-black text-xl mb-2 ${isPopular ? "text-white" : "text-clay-deep"}`}>{bundle.name}</h3>
+      <h3 className={`font-syne font-semibold text-xl mb-2 ${isPopular ? "text-white" : "text-clay-deep"}`}>{bundle.name}</h3>
       <p className={`font-instrument text-sm mb-6 ${isPopular ? "text-white/60" : "text-clay-mid"}`}>{bundle.description}</p>
       <ul className="space-y-2.5 flex-1 mb-8">
         {bundle.includes.map((item) => (
@@ -110,7 +110,7 @@ function BundleCard({ bundle }: { bundle: (typeof BUNDLES)[0] }) {
         ))}
       </ul>
       <div className="flex items-center justify-between pt-4 border-t border-white/10">
-        <span className={`font-syne font-black text-3xl ${isPopular ? "text-white" : "text-clay-deep"}`}>{bundle.priceLabel}</span>
+        <span className={`font-syne font-semibold text-3xl ${isPopular ? "text-white" : "text-clay-deep"}`}>{bundle.priceLabel}</span>
         <button
           onClick={onBuy}
           disabled={loading}
@@ -143,7 +143,7 @@ export default function StorePage() {
         {/* Header */}
         <div className="mb-14">
           <span className="clay-tag">AI Product Store</span>
-          <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">
+          <h1 className="font-syne font-semibold text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">
             Buy. Deploy.<br />
             <span className="text-gradient-dark">Run Autonomously.</span>
           </h1>
@@ -181,7 +181,7 @@ export default function StorePage() {
           <div>
             <div className="mb-10">
               <span className="clay-tag">Save More</span>
-              <h2 className="font-syne font-black text-3xl sm:text-4xl text-clay-deep mt-4 mb-2 tracking-tight">Bundle Pricing</h2>
+              <h2 className="font-syne font-semibold text-3xl sm:text-4xl text-clay-deep mt-4 mb-2 tracking-tight">Bundle Pricing</h2>
               <p className="font-instrument text-clay-mid">Everything you need to launch an AI-powered business.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

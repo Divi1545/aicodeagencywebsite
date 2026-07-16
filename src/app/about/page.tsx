@@ -28,7 +28,7 @@ export default function AboutPage() {
         {/* Header */}
         <div className="max-w-3xl mb-20">
           <span className="clay-tag">Our Story</span>
-          <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-6 tracking-tight">
+          <h1 className="font-syne font-semibold text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-6 tracking-tight">
             Built in Sri Lanka.<br />
             <span className="text-gradient-dark">Built to ship.</span>
           </h1>
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 pb-24 border-b border-clay-border">
           <div>
             <span className="clay-tag">The Founder</span>
-            <h2 className="font-syne font-black text-3xl sm:text-4xl text-clay-deep mt-4 mb-3 tracking-tight">Divindu Edirisinghe</h2>
+            <h2 className="font-syne font-semibold text-3xl sm:text-4xl text-clay-deep mt-4 mb-3 tracking-tight">Divindu Edirisinghe</h2>
             <div className="flex items-center gap-2 mb-6">
               <MapPin size={13} className="text-clay-light" />
               <span className="font-dm-mono text-xs text-clay-light">Negombo, Sri Lanka 🇱🇰</span>
@@ -58,7 +58,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-3 gap-3">
               {[{ value: "8+", label: "Platforms Built" }, { value: "3+", label: "Years Building" }, { value: "Solo", label: "Bootstrapped" }].map((s) => (
                 <div key={s.label} className="clay-card p-4 text-center">
-                  <div className="font-syne font-black text-xl text-clay-deep">{s.value}</div>
+                  <div className="font-syne font-semibold text-xl text-clay-deep">{s.value}</div>
                   <div className="font-dm-mono text-[10px] text-clay-light uppercase tracking-wider mt-1">{s.label}</div>
                 </div>
               ))}
@@ -85,7 +85,7 @@ export default function AboutPage() {
         {/* Timeline */}
         <div className="mb-24">
           <span className="clay-tag">Journey</span>
-          <h2 className="font-syne font-black text-3xl sm:text-4xl text-clay-deep mt-4 mb-10 tracking-tight">How We Got Here</h2>
+          <h2 className="font-syne font-semibold text-3xl sm:text-4xl text-clay-deep mt-4 mb-10 tracking-tight">How We Got Here</h2>
           <div className="relative">
             <div className="absolute left-[19px] top-0 bottom-0 w-px bg-clay-border" />
             <div className="space-y-8">
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 <div key={item.year} className="flex gap-6 relative">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative z-10"
-                    style={{ background: "linear-gradient(145deg, #f0efe9, #e0dfd6)", boxShadow: "3px 3px 10px rgba(0,0,0,0.08), -1px -1px 4px rgba(255,255,255,0.9)" }}
+                    style={{ background: "#EFEBE1", border: "1px solid #E5E0D5" }}
                   >
                     <div className="w-2.5 h-2.5 rounded-full bg-clay-deep" />
                   </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
         {/* Live Platforms */}
         <div className="mb-24">
           <span className="clay-tag">Portfolio</span>
-          <h2 className="font-syne font-black text-3xl sm:text-4xl text-clay-deep mt-4 mb-3 tracking-tight">Live Platforms</h2>
+          <h2 className="font-syne font-semibold text-3xl sm:text-4xl text-clay-deep mt-4 mb-3 tracking-tight">Live Platforms</h2>
           <p className="font-instrument text-clay-mid mb-10">Real products, live in production, built entirely by AI Code Agency.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {LIVE_PLATFORMS.map((p) => (
@@ -134,12 +134,12 @@ export default function AboutPage() {
         {/* Why Sri Lanka */}
         <div
           className="rounded-[2rem] p-10 sm:p-12"
-          style={{ background: "linear-gradient(145deg, #1C1C1C 0%, #0D0D0D 100%)", boxShadow: "0 28px 80px rgba(0,0,0,0.16), 0 8px 28px rgba(0,0,0,0.10)" }}
+          style={{ background: "#1A1815", boxShadow: "0 28px 80px rgba(0,0,0,0.16), 0 8px 28px rgba(0,0,0,0.10)" }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
               <span className="clay-tag border-white/10 text-white/40">Why Sri Lanka</span>
-              <h2 className="font-syne font-black text-3xl sm:text-4xl text-white mt-4 mb-4 tracking-tight">
+              <h2 className="font-syne font-semibold text-3xl sm:text-4xl text-white mt-4 mb-4 tracking-tight">
                 Southeast Asia&apos;s AI<br />Development Hub
               </h2>
               <p className="font-instrument text-white/50 leading-relaxed">
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 { value: "Growing",   label: "Tech Ecosystem" },
               ].map((s) => (
                 <div key={s.label} className="p-5 rounded-2xl border border-white/10 bg-white/5 text-center">
-                  <div className="font-syne font-black text-xl text-white mb-1">{s.value}</div>
+                  <div className="font-syne font-semibold text-xl text-white mb-1">{s.value}</div>
                   <div className="font-dm-mono text-[10px] text-white/35 uppercase tracking-wider">{s.label}</div>
                 </div>
               ))}

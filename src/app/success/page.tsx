@@ -11,7 +11,7 @@ export default function SuccessPage() {
         >
           <CheckCircle className="w-9 h-9 text-clay-deep" />
         </div>
-        <h1 className="font-syne font-black text-4xl sm:text-5xl text-clay-deep mb-3">Payment Successful! 🎉</h1>
+        <h1 className="font-syne font-semibold text-4xl sm:text-5xl text-clay-deep mb-3">Payment Successful! 🎉</h1>
         <p className="font-instrument text-clay-mid text-lg mb-8">
           Thank you for your purchase. You&apos;re one step closer to running your business on autopilot.
         </p>
@@ -25,7 +25,7 @@ export default function SuccessPage() {
             <div key={item.step} className="flex items-start gap-4 mb-4 last:mb-0">
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: "linear-gradient(145deg, #f0efe9, #e2e1d8)", boxShadow: "3px 3px 8px rgba(0,0,0,0.07), -1px -1px 4px rgba(255,255,255,0.9)" }}
+                style={{ background: "#EFEBE1", border: "1px solid #E5E0D5" }}
               >
                 <item.icon size={14} className="text-clay-charcoal" />
               </div>

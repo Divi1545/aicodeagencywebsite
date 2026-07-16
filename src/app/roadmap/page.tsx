@@ -25,7 +25,7 @@ export default function RoadmapPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <span className="clay-tag">Where We&apos;re Going</span>
-          <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">The Roadmap</h1>
+          <h1 className="font-syne font-semibold text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">The Roadmap</h1>
           <p className="font-instrument text-clay-mid text-lg max-w-xl">
             Transparent. Ambitious. Built in public. Here&apos;s exactly where AI Code Agency is headed.
           </p>
@@ -46,12 +46,12 @@ export default function RoadmapPage() {
                 {/* Card */}
                 <div className={`ml-16 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-14" : "md:pl-14"}`}>
                   <div className={`clay-card p-8 ${phase.status === "active" ? "border-clay-deep" : ""}`}
-                    style={phase.status === "active" ? { borderColor: "#1C1C1C" } : {}}>
+                    style={phase.status === "active" ? { borderColor: "#BF5B34" } : {}}>
                     <div className="flex items-center gap-3 mb-4">
                       <span className={`clay-tag ${phase.status === "active" ? "bg-clay-deep text-white border-clay-deep" : ""}`}>{phase.label}</span>
-                      <span className="font-syne font-black text-2xl text-clay-deep">{phase.quarter}</span>
+                      <span className="font-syne font-semibold text-2xl text-clay-deep">{phase.quarter}</span>
                     </div>
-                    <h2 className="font-syne font-black text-xl text-clay-deep mb-2">{phase.title}</h2>
+                    <h2 className="font-syne font-semibold text-xl text-clay-deep mb-2">{phase.title}</h2>
                     <p className="font-instrument text-sm text-clay-mid leading-relaxed mb-6">{phase.description}</p>
                     <ul className="space-y-2.5">
                       {phase.items.map((item) => (

@@ -15,22 +15,27 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        syne: ["var(--font-syne)", "sans-serif"],
+        // `syne` kept as the class name used across pages; it now renders the
+        // Fraunces display serif loaded in layout.tsx.
+        syne: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         "dm-mono": ["var(--font-dm-mono)", "monospace"],
         instrument: ["var(--font-instrument-sans)", "sans-serif"],
       },
       colors: {
-        // Clay / 3D white system
-        "clay-bg": "#F0EFE9",
-        "clay-surface": "#FFFFFF",
-        "clay-card": "#FAFAF7",
-        "clay-border": "#E2E1D8",
-        "clay-faint": "#ECEAE3",
-        "clay-deep": "#0D0D0D",
-        "clay-charcoal": "#1C1C1C",
-        "clay-mid": "#5C5C5C",
-        "clay-light": "#9A9A96",
-        "clay-ink": "#2D2D2A",
+        // Paper & ink editorial system (clay-* names kept for compatibility)
+        "clay-bg": "#F7F5F0",
+        "clay-surface": "#FDFCFA",
+        "clay-card": "#FFFFFF",
+        "clay-border": "#E5E0D5",
+        "clay-faint": "#EFEBE1",
+        "clay-deep": "#1A1815",
+        "clay-charcoal": "#23201B",
+        "clay-mid": "#5B564C",
+        "clay-light": "#98917F",
+        "clay-ink": "#2C2822",
+        terracotta: "#BF5B34",
+        "terracotta-deep": "#9E4A2B",
         // Legacy brand tokens
         "brand-bg": "#060608",
         "brand-surface": "#0E0E10",
