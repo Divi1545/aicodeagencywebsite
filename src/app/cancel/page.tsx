@@ -11,7 +11,7 @@ export default function CancelPage() {
         >
           <span className="text-3xl">👋</span>
         </div>
-        <h1 className="font-syne font-black text-4xl sm:text-5xl text-clay-deep mb-3">No worries!</h1>
+        <h1 className="font-syne font-semibold text-4xl sm:text-5xl text-clay-deep mb-3">No worries!</h1>
         <p className="font-instrument text-clay-mid text-lg mb-8">
           You can always come back when you&apos;re ready. Your cart hasn&apos;t been charged.
         </p>

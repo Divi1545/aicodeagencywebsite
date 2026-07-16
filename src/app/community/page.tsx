@@ -47,7 +47,7 @@ export default function CommunityPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <span className="clay-tag">Community & Give Back</span>
-          <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">
+          <h1 className="font-syne font-semibold text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">
             We&apos;re Building More<br />
             <span className="text-gradient-dark">Than Software.</span>
           </h1>
@@ -61,11 +61,11 @@ export default function CommunityPage() {
             <div key={p.name} className="clay-card clay-card-hover p-8">
               <div
                 className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
-                style={{ background: "linear-gradient(145deg, #f0efe9, #e2e1d8)", boxShadow: "4px 4px 12px rgba(0,0,0,0.08), -2px -2px 6px rgba(255,255,255,0.9)" }}
+                style={{ background: "#EFEBE1", border: "1px solid #E5E0D5" }}
               >
                 <p.icon size={22} className="text-clay-charcoal" />
               </div>
-              <h2 className="font-syne font-black text-xl text-clay-deep mb-1">{p.name}</h2>
+              <h2 className="font-syne font-semibold text-xl text-clay-deep mb-1">{p.name}</h2>
               <p className="font-dm-mono text-[11px] text-clay-mid mb-4">{p.tagline}</p>
               <p className="font-instrument text-sm text-clay-mid leading-relaxed mb-6">{p.description}</p>
               <ul className="space-y-2 mb-6">
@@ -84,11 +84,11 @@ export default function CommunityPage() {
         {/* Waitlist */}
         <div
           className="rounded-[2rem] overflow-hidden text-center px-8 py-16 sm:py-20"
-          style={{ background: "linear-gradient(145deg, #1C1C1C 0%, #0D0D0D 100%)", boxShadow: "0 32px 80px rgba(0,0,0,0.16), 0 8px 32px rgba(0,0,0,0.10)" }}
+          style={{ background: "#1A1815", boxShadow: "0 32px 80px rgba(0,0,0,0.16), 0 8px 32px rgba(0,0,0,0.10)" }}
         >
           <div className="max-w-xl mx-auto">
             <span className="clay-tag mb-5 inline-block border-white/10 text-white/40">COMMUNITY WAITLIST</span>
-            <h2 className="font-syne font-black text-3xl sm:text-4xl text-white mt-4 mb-3 tracking-tight">Join the Waitlist</h2>
+            <h2 className="font-syne font-semibold text-3xl sm:text-4xl text-white mt-4 mb-3 tracking-tight">Join the Waitlist</h2>
             <p className="font-instrument text-white/50 mb-8">Be first to access our AI courses, free tools, and partner programme.</p>
 
             {success ? (

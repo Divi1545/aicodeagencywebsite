@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
-import { VercelTriangle } from "@/components/icons/VercelTriangle";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
-  { href: "/store",     label: "AI Store" },
+  { href: "/store",     label: "Store" },
   { href: "/hardware",  label: "Hardware" },
   { href: "/services",  label: "Services" },
   { href: "/about",     label: "About" },
@@ -18,110 +17,82 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const [open, setOpen]       = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const [open, setOpen] = useState(false);
 
   return (
-    <>
-      {/* ── Floating island navbar ─────────────────────── */}
-      <header
-        className={cn(
-          "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] max-w-5xl",
-          scrolled ? "top-3" : "top-5"
-        )}
-      >
-        <div className="nav-island px-5 py-2.5 flex items-center justify-between">
-          {/* Logo: Vercel mark (links to Vercel) + wordmark (home) */}
-          <div className="flex items-center gap-2.5 shrink-0">
-            <a
-              href="https://vercel.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-clay-deep hover:opacity-75 transition-opacity p-0.5 -m-0.5"
-              aria-label="Vercel — visit vercel.com"
-            >
-              <VercelTriangle className="h-[18px] w-[17px]" />
-            </a>
-            <Link href="/" className="flex items-center gap-2">
-              <span className="font-syne font-black text-lg text-clay-deep tracking-tight">
-                AI<span className="text-clay-mid">CODE</span>
-              </span>
-              <span className="hidden sm:inline font-dm-mono text-[10px] text-clay-light border border-clay-border px-2 py-0.5 rounded-full">
-                AGENCY
-              </span>
-            </Link>
-          </div>
+    <header className="nav-island fixed top-0 left-0 right-0 z-50">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
+        {/* Wordmark */}
+        <Link href="/" className="shrink-0 flex items-baseline gap-1">
+          <span className="font-display font-semibold text-[19px] tracking-tight text-clay-deep">
+            AI Code Agency
+          </span>
+          <span className="w-1.5 h-1.5 rounded-full bg-terracotta inline-block translate-y-[-1px]" />
+        </Link>
 
-          {/* Desktop links */}
-          <nav className="hidden md:flex items-center gap-0.5">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "px-3.5 py-2 rounded-full font-instrument text-sm transition-all",
-                  pathname === link.href
-                    ? "bg-clay-deep text-white"
-                    : "text-clay-mid hover:text-clay-deep hover:bg-clay-faint"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* CTA + mobile toggle */}
-          <div className="flex items-center gap-2">
+        {/* Desktop links */}
+        <nav className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
             <Link
-              href="/store"
-              className="btn-clay-dark hidden sm:inline-flex items-center text-sm px-5 py-2.5"
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "px-3 py-2 rounded-lg font-instrument text-sm transition-colors",
+                pathname === link.href
+                  ? "text-clay-deep font-semibold"
+                  : "text-clay-mid hover:text-clay-deep"
+              )}
             >
-              Buy Now
+              {link.label}
             </Link>
-            <button
-              className="md:hidden w-9 h-9 rounded-full bg-clay-faint border border-clay-border flex items-center justify-center text-clay-mid hover:text-clay-deep transition-colors"
-              onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-            >
-              {open ? <X size={16} /> : <Menu size={16} />}
-            </button>
-          </div>
+          ))}
+        </nav>
+
+        {/* CTA + mobile toggle */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/store"
+            className="btn-clay-dark hidden sm:inline-flex items-center gap-1.5 text-sm px-4 py-2"
+          >
+            Browse products <ArrowUpRight size={14} />
+          </Link>
+          <button
+            className="md:hidden w-9 h-9 rounded-lg border border-clay-border flex items-center justify-center text-clay-mid hover:text-clay-deep transition-colors"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={16} /> : <Menu size={16} />}
+          </button>
         </div>
+      </div>
 
-        {/* Mobile dropdown */}
-        {open && (
-          <div className="mt-2 clay-card mx-1 p-3 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "block px-4 py-2.5 rounded-2xl font-instrument text-sm transition-all",
-                  pathname === link.href
-                    ? "bg-clay-deep text-white"
-                    : "text-clay-mid hover:text-clay-deep hover:bg-clay-faint"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="md:hidden border-t border-clay-border bg-clay-bg px-5 py-4 space-y-1">
+          {navLinks.map((link) => (
             <Link
-              href="/store"
+              key={link.href}
+              href={link.href}
               onClick={() => setOpen(false)}
-              className="block mt-2 text-center btn-clay-dark px-4 py-3 text-sm"
+              className={cn(
+                "block px-3 py-2.5 rounded-lg font-instrument text-sm transition-colors",
+                pathname === link.href
+                  ? "text-clay-deep font-semibold bg-clay-faint"
+                  : "text-clay-mid hover:text-clay-deep"
+              )}
             >
-              Buy Now
+              {link.label}
             </Link>
-          </div>
-        )}
-      </header>
-    </>
+          ))}
+          <Link
+            href="/store"
+            onClick={() => setOpen(false)}
+            className="btn-clay-dark block mt-3 text-center px-4 py-3 text-sm"
+          >
+            Browse products
+          </Link>
+        </div>
+      )}
+    </header>
   );
 }

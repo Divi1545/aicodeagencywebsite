@@ -74,7 +74,7 @@ export default function ServicesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <span className="clay-tag">What We Do</span>
-          <h1 className="font-syne font-black text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">Our Services</h1>
+          <h1 className="font-syne font-semibold text-4xl sm:text-5xl md:text-6xl text-clay-deep mt-4 mb-4 tracking-tight">Our Services</h1>
           <p className="font-instrument text-clay-mid text-lg max-w-xl">
             Full-stack AI development — from a single chatbot to a complete autonomous business stack.
           </p>
@@ -94,13 +94,13 @@ export default function ServicesPage() {
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                      style={{ background: "linear-gradient(145deg, #f0efe9, #e2e1d8)", boxShadow: "4px 4px 12px rgba(0,0,0,0.08), -2px -2px 6px rgba(255,255,255,0.9)" }}
+                      style={{ background: "#EFEBE1", border: "1px solid #E5E0D5" }}
                     >
                       <s.icon size={22} className="text-clay-charcoal" />
                     </div>
                     <span className="font-dm-mono text-xs text-clay-light tracking-wider">0{i + 1}</span>
                   </div>
-                  <h2 className="font-syne font-black text-xl text-clay-deep mb-1">{s.name}</h2>
+                  <h2 className="font-syne font-semibold text-xl text-clay-deep mb-1">{s.name}</h2>
                   <p className="font-dm-mono text-[11px] text-clay-mid mb-4">{s.tagline}</p>
                   <p className="font-instrument text-sm text-clay-mid leading-relaxed">{s.description}</p>
                 </div>

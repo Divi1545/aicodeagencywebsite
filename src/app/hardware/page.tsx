@@ -110,7 +110,7 @@ export default function HardwarePage() {
               <span className="w-1.5 h-1.5 rounded-full bg-clay-deep inline-block" />
               Physical AI. Built for Buildings.
             </div>
-            <h1 className="font-syne font-black text-5xl sm:text-6xl md:text-7xl leading-[0.93] tracking-[-0.03em] text-clay-deep mb-6">
+            <h1 className="font-syne font-semibold text-5xl sm:text-6xl md:text-7xl leading-[0.93] tracking-[-0.03em] text-clay-deep mb-6">
               AI Hardware.<br />
               <span className="text-gradient-dark">Deployed in</span><br />
               Your Building.
@@ -150,7 +150,7 @@ export default function HardwarePage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             {STATS.map((s) => (
               <div key={s.label} className="text-center">
-                <div className="font-syne font-black text-3xl sm:text-4xl text-clay-deep mb-1">{s.value}</div>
+                <div className="font-syne font-semibold text-3xl sm:text-4xl text-clay-deep mb-1">{s.value}</div>
                 <div className="font-dm-mono text-[11px] text-clay-light tracking-widest uppercase">{s.label}</div>
               </div>
             ))}
@@ -162,7 +162,7 @@ export default function HardwarePage() {
       <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
         <div className="mb-14">
           <span className="clay-tag">Product Range</span>
-          <h2 className="font-syne font-black text-4xl sm:text-5xl text-clay-deep mt-4 mb-3 tracking-tight leading-[1.05]">
+          <h2 className="font-syne font-semibold text-4xl sm:text-5xl text-clay-deep mt-4 mb-3 tracking-tight leading-[1.05]">
             Six devices.<br />One mission.
           </h2>
           <p className="font-instrument text-clay-mid max-w-lg">
@@ -188,10 +188,10 @@ export default function HardwarePage() {
                 <div
                   className="w-full h-52 flex items-center justify-center"
                   style={{
-                    background: "linear-gradient(145deg, #f8f8f5, #e8e7e0)",
+                    background: "#EFEBE1",
                   }}
                 >
-                  <span className="font-syne font-black text-2xl text-clay-border">{p.title}</span>
+                  <span className="font-syne font-semibold text-2xl text-clay-border">{p.title}</span>
                 </div>
               )}
 
@@ -219,7 +219,7 @@ export default function HardwarePage() {
       <section className="bg-clay-deep py-4 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="inline-flex items-center gap-8 font-syne font-black text-white/80 text-sm tracking-widest uppercase px-10">
+            <span key={i} className="inline-flex items-center gap-8 font-syne font-semibold text-white/80 text-sm tracking-widest uppercase px-10">
               SUBSCRIBE · DEPLOY · OWN YOUR AI <span className="text-white/20">◆</span>
             </span>
           ))}
@@ -240,7 +240,7 @@ export default function HardwarePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="clay-tag">What You Get</span>
-            <h2 className="font-syne font-black text-4xl sm:text-5xl text-clay-deep mt-4 mb-5 tracking-tight leading-[1.0]">
+            <h2 className="font-syne font-semibold text-4xl sm:text-5xl text-clay-deep mt-4 mb-5 tracking-tight leading-[1.0]">
               Everything included.<br /><span className="text-gradient-warm">Nothing to configure.</span>
             </h2>
             <p className="font-instrument text-clay-mid text-lg leading-relaxed mb-7">
@@ -249,7 +249,7 @@ export default function HardwarePage() {
             <ul className="space-y-3.5">
               {INCLUDED.map((item) => (
                 <li key={item} className="flex items-start gap-3 font-instrument text-clay-mid text-sm">
-                  <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px] text-white" style={{ background: "#1C1C1C", boxShadow: "0 2px 6px rgba(0,0,0,0.18)" }}>✓</span>
+                  <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px] text-white" style={{ background: "#1A1815", boxShadow: "0 2px 6px rgba(0,0,0,0.18)" }}>✓</span>
                   {item}
                 </li>
               ))}
@@ -263,7 +263,7 @@ export default function HardwarePage() {
               { label: "Data Location", value: "On-Device" },
             ].map((item) => (
               <div key={item.label} className="clay-card p-7 text-center clay-card-hover">
-                <div className="font-syne font-black text-2xl text-clay-deep mb-1">{item.value}</div>
+                <div className="font-syne font-semibold text-2xl text-clay-deep mb-1">{item.value}</div>
                 <div className="font-dm-mono text-[11px] text-clay-light tracking-widest uppercase">{item.label}</div>
               </div>
             ))}
@@ -276,7 +276,7 @@ export default function HardwarePage() {
         <div
           className="relative rounded-[2rem] overflow-hidden text-center px-8 py-20 sm:py-24"
           style={{
-            background: "linear-gradient(145deg, #1C1C1C 0%, #0D0D0D 100%)",
+            background: "#1A1815",
             boxShadow: "0 40px 100px rgba(0,0,0,0.22), 0 12px 40px rgba(0,0,0,0.12)",
           }}
         >
@@ -284,7 +284,7 @@ export default function HardwarePage() {
           <div className="absolute bottom-[-40px] left-[-40px] w-48 h-48 rounded-full bg-white/[0.02]" />
           <div className="relative">
             <span className="clay-tag mb-6 inline-block border-white/10 text-white/40">DEPLOY YOUR FIRST BOX</span>
-            <h2 className="font-syne font-black text-4xl sm:text-5xl text-white mb-4 tracking-tight">
+            <h2 className="font-syne font-semibold text-4xl sm:text-5xl text-white mb-4 tracking-tight">
               Ready to deploy<br />AI in your<br />building?
             </h2>
             <p className="font-instrument text-white/50 text-lg mb-10 max-w-md mx-auto">
