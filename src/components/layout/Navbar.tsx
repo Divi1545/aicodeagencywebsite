@@ -7,9 +7,10 @@ import { cn } from "@/lib/utils";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
+  { href: "/ventures",  label: "Ventures" },
+  { href: "/services",  label: "Services" },
   { href: "/store",     label: "Store" },
   { href: "/hardware",  label: "Hardware" },
-  { href: "/services",  label: "Services" },
   { href: "/about",     label: "About" },
   { href: "/community", label: "Community" },
   { href: "/roadmap",   label: "Roadmap" },
@@ -37,7 +38,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "px-3 py-2 rounded-lg font-instrument text-sm transition-colors",
+                "px-2.5 py-2 rounded-lg font-instrument text-[13.5px] transition-colors",
                 pathname === link.href
                   ? "text-clay-deep font-semibold"
                   : "text-clay-mid hover:text-clay-deep"

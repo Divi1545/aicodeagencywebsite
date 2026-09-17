@@ -26,7 +26,7 @@ const instrumentSans = Instrument_Sans({
 export const metadata: Metadata = {
   title: "AI Code Agency — We Build AI That Actually Works",
   description:
-    "Sri Lanka AI studio behind IslandLoaf (super app for tourism & local services), Authority13 (AI workforce OS), AutoBid LK, IslandLoaf Creator, Moments, and IslandLoaf Stay. Deployable kits and custom builds.",
+    "A one-founder AI studio in Negombo, Sri Lanka. We build and operate IslandLoaf — a Sri Lankan app that gets local tourism businesses online — and Authority13, an AI chief of staff that runs the recurring work of a company. Custom builds and ready-to-deploy AI products.",
   keywords: [
     "AI development",
     "IslandLoaf",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Code Agency — We Build AI That Actually Works",
     description:
-      "IslandLoaf super app stack, Authority13, AutoBid LK, Moments, IslandLoaf Stay & Creator — plus ready-to-deploy AI kits from Sri Lanka.",
+      "Builders of IslandLoaf and Authority13. A one-founder AI studio in Negombo, Sri Lanka — custom AI platforms and ready-to-deploy products.",
     url: "https://aicodeagency.org",
     siteName: "AI Code Agency",
     locale: "en_US",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Code Agency",
     description:
-      "IslandLoaf, Authority13, AutoBid LK, Moments, Stay, Creator — AI platforms and kits from Sri Lanka.",
+      "Builders of IslandLoaf and Authority13 — an AI studio from Negombo, Sri Lanka.",
   },
   robots: {
     index: true,

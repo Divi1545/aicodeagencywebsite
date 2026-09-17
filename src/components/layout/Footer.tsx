@@ -2,22 +2,22 @@ import Link from "next/link";
 import { VercelTriangle } from "@/components/icons/VercelTriangle";
 
 const links = {
+  Ventures: [
+    { label: "IslandLoaf",     href: "/ventures#islandloaf" },
+    { label: "Authority13",    href: "/ventures#authority13" },
+    { label: "For travellers", href: "https://www.islandloafstay.com" },
+    { label: "For businesses", href: "https://www.islandloafvendor.com" },
+  ],
   Products: [
-    { label: "AI Store",    href: "/store" },
-    { label: "Chatbot Kit", href: "/store" },
-    { label: "Callbot Kit", href: "/store" },
-    { label: "Hardware",    href: "/hardware" },
+    { label: "AI Store", href: "/store" },
+    { label: "Services", href: "/services" },
+    { label: "Hardware", href: "/hardware" },
   ],
   Company: [
-    { label: "About",     href: "/about" },
-    { label: "Services",  href: "/services" },
-    { label: "Roadmap",   href: "/roadmap" },
-    { label: "Community", href: "/community" },
-  ],
-  Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Use",   href: "#" },
-    { label: "Refund Policy",  href: "#" },
+    { label: "Who we are", href: "/about" },
+    { label: "About me",   href: "/about#founder" },
+    { label: "Roadmap",    href: "/roadmap" },
+    { label: "Community",  href: "/community" },
   ],
 };
 
@@ -33,9 +33,9 @@ export function Footer() {
             </span>
           </Link>
           <p className="mt-5 text-white/50 text-sm leading-relaxed max-w-sm font-instrument">
-            Sri Lanka&apos;s AI development studio. Chatbots, callbots, SaaS
-            platforms, scrapers, and automation systems that run your business
-            autonomously.
+            A one-founder AI studio in Negombo, Sri Lanka. We build and operate
+            IslandLoaf and Authority13 — and build the same class of software for
+            other people.
           </p>
         </div>
 
