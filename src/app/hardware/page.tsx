@@ -249,7 +249,7 @@ export default function HardwarePage() {
             <ul className="space-y-3.5">
               {INCLUDED.map((item) => (
                 <li key={item} className="flex items-start gap-3 font-instrument text-clay-mid text-sm">
-                  <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px] text-white" style={{ background: "#1A1815", boxShadow: "0 2px 6px rgba(0,0,0,0.18)" }}>✓</span>
+                  <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px] text-white" style={{ background: "#111111", boxShadow: "0 2px 6px rgba(0,0,0,0.18)" }}>✓</span>
                   {item}
                 </li>
               ))}
@@ -276,7 +276,7 @@ export default function HardwarePage() {
         <div
           className="relative rounded-[2rem] overflow-hidden text-center px-8 py-20 sm:py-24"
           style={{
-            background: "#1A1815",
+            background: "#111111",
             boxShadow: "0 40px 100px rgba(0,0,0,0.22), 0 12px 40px rgba(0,0,0,0.12)",
           }}
         >

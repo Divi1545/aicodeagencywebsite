@@ -24,11 +24,16 @@ export function Navbar() {
     <header className="nav-island fixed top-0 left-0 right-0 z-50">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
         {/* Wordmark */}
-        <Link href="/" className="shrink-0 flex items-baseline gap-1">
-          <span className="font-display font-semibold text-[19px] tracking-tight text-clay-deep">
+        <Link href="/" className="shrink-0 flex items-center gap-2.5">
+          <span
+            aria-hidden="true"
+            className="w-[26px] h-[26px] rounded-lg bg-terracotta text-white font-dm-mono text-[12px] font-medium inline-flex items-center justify-center"
+          >
+            AI
+          </span>
+          <span className="font-display font-semibold text-[17px] tracking-tight text-clay-deep">
             AI Code Agency
           </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-terracotta inline-block translate-y-[-1px]" />
         </Link>
 
         {/* Desktop links */}
@@ -52,13 +57,13 @@ export function Navbar() {
         {/* CTA + mobile toggle */}
         <div className="flex items-center gap-3">
           <Link
-            href="/store"
-            className="btn-clay-dark hidden sm:inline-flex items-center gap-1.5 text-sm px-4 py-2"
+            href="/#start"
+            className="btn-clay-dark hidden sm:inline-flex items-center gap-1.5 text-sm px-5 min-h-[44px]"
           >
-            Browse products <ArrowUpRight size={14} />
+            Tell us your problem <ArrowUpRight size={14} />
           </Link>
           <button
-            className="md:hidden w-9 h-9 rounded-lg border border-clay-border flex items-center justify-center text-clay-mid hover:text-clay-deep transition-colors"
+            className="md:hidden w-11 h-11 rounded-full border border-clay-border flex items-center justify-center text-clay-mid hover:text-clay-deep transition-colors"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -86,11 +91,11 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/store"
+            href="/#start"
             onClick={() => setOpen(false)}
             className="btn-clay-dark block mt-3 text-center px-4 py-3 text-sm"
           >
-            Browse products
+            Tell us your problem
           </Link>
         </div>
       )}

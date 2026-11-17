@@ -17,25 +17,26 @@ const config: Config = {
       fontFamily: {
         // `syne` kept as the class name used across pages; it now renders the
         // Fraunces display serif loaded in layout.tsx.
-        syne: ["var(--font-display)", "Georgia", "serif"],
-        display: ["var(--font-display)", "Georgia", "serif"],
+        syne: ["var(--font-display)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
         "dm-mono": ["var(--font-dm-mono)", "monospace"],
         instrument: ["var(--font-instrument-sans)", "sans-serif"],
       },
       colors: {
         // Paper & ink editorial system (clay-* names kept for compatibility)
-        "clay-bg": "#F7F5F0",
+        "clay-bg": "#F6F5F1",
         "clay-surface": "#FDFCFA",
         "clay-card": "#FFFFFF",
-        "clay-border": "#E5E0D5",
+        "clay-border": "#E4E1D9",
         "clay-faint": "#EFEBE1",
-        "clay-deep": "#1A1815",
+        "clay-deep": "#111111",
         "clay-charcoal": "#23201B",
-        "clay-mid": "#5B564C",
-        "clay-light": "#98917F",
+        "clay-mid": "#5B5852",
+        "clay-light": "#6B675F",
         "clay-ink": "#2C2822",
-        terracotta: "#BF5B34",
-        "terracotta-deep": "#9E4A2B",
+        terracotta: "#0F766E",
+        "terracotta-deep": "#0B5E58",
         // Legacy brand tokens
         "brand-bg": "#060608",
         "brand-surface": "#0E0E10",

@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Fraunces, DM_Mono, Instrument_Sans } from "next/font/google";
+import { Inter_Tight, Instrument_Serif, DM_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const fraunces = Fraunces({
+const interTight = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-display",
+  weight: ["500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: "400",
   style: ["normal", "italic"],
-  axes: ["opsz"],
 });
 
 const dmMono = DM_Mono({
@@ -24,9 +30,9 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AI Code Agency — We Build AI That Actually Works",
+  title: "AI Code Agency — Stop losing customers to slow replies and busywork",
   description:
-    "A one-founder AI studio in Negombo, Sri Lanka. We build and operate IslandLoaf — a Sri Lankan app that gets local tourism businesses online — and Authority13, an AI chief of staff that runs the recurring work of a company. Custom builds and ready-to-deploy AI products.",
+    "AI that answers your customers on WhatsApp and the phone, books appointments, follows up and runs the repetitive work, so your business grows without hiring more people. Built in Negombo, Sri Lanka; live in two to three weeks; you own it.",
   keywords: [
     "AI development",
     "IslandLoaf",
@@ -42,9 +48,9 @@ export const metadata: Metadata = {
     "Next.js",
   ],
   openGraph: {
-    title: "AI Code Agency — We Build AI That Actually Works",
+    title: "AI Code Agency — Stop losing customers to slow replies and busywork",
     description:
-      "Builders of IslandLoaf and Authority13. A one-founder AI studio in Negombo, Sri Lanka — custom AI platforms and ready-to-deploy products.",
+      "AI that answers your customers, books your appointments and runs the repetitive work. Built in Sri Lanka, live in two to three weeks, and yours to own.",
     url: "https://aicodeagency.org",
     siteName: "AI Code Agency",
     locale: "en_US",
@@ -70,7 +76,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${dmMono.variable} ${instrumentSans.variable}`}
+        className={`${interTight.variable} ${instrumentSerif.variable} ${dmMono.variable} ${instrumentSans.variable}`}
       >
         <Navbar />
         <main>{children}</main>
