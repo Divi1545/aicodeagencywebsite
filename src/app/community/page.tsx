@@ -84,7 +84,7 @@ export default function CommunityPage() {
         {/* Waitlist */}
         <div
           className="rounded-[2rem] overflow-hidden text-center px-8 py-16 sm:py-20"
-          style={{ background: "#1A1815", boxShadow: "0 32px 80px rgba(0,0,0,0.16), 0 8px 32px rgba(0,0,0,0.10)" }}
+          style={{ background: "#111111", boxShadow: "0 32px 80px rgba(0,0,0,0.16), 0 8px 32px rgba(0,0,0,0.10)" }}
         >
           <div className="max-w-xl mx-auto">
             <span className="clay-tag mb-5 inline-block border-white/10 text-white/40">COMMUNITY WAITLIST</span>

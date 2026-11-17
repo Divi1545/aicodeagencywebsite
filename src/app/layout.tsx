@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Fraunces, DM_Mono, Instrument_Sans } from "next/font/google";
+import { Inter_Tight, Instrument_Serif, DM_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const fraunces = Fraunces({
+const interTight = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-display",
+  weight: ["500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: "400",
   style: ["normal", "italic"],
-  axes: ["opsz"],
 });
 
 const dmMono = DM_Mono({
@@ -70,7 +76,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${dmMono.variable} ${instrumentSans.variable}`}
+        className={`${interTight.variable} ${instrumentSerif.variable} ${dmMono.variable} ${instrumentSans.variable}`}
       >
         <Navbar />
         <main>{children}</main>

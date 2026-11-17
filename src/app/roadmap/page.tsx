@@ -46,7 +46,7 @@ export default function RoadmapPage() {
                 {/* Card */}
                 <div className={`ml-16 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-14" : "md:pl-14"}`}>
                   <div className={`clay-card p-8 ${phase.status === "active" ? "border-clay-deep" : ""}`}
-                    style={phase.status === "active" ? { borderColor: "#BF5B34" } : {}}>
+                    style={phase.status === "active" ? { borderColor: "#0F766E" } : {}}>
                     <div className="flex items-center gap-3 mb-4">
                       <span className={`clay-tag ${phase.status === "active" ? "bg-clay-deep text-white border-clay-deep" : ""}`}>{phase.label}</span>
                       <span className="font-syne font-semibold text-2xl text-clay-deep">{phase.quarter}</span>
