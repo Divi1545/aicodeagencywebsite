@@ -3,27 +3,43 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { VENTURES } from "@/lib/ventures";
 
 const STATS = [
-  { value: "2",       label: "Ventures we run" },
-  { value: "7",       label: "Platforms shipped" },
-  { value: "2–3 wks", label: "Average delivery" },
-  { value: "Solo",    label: "Bootstrapped, Sri Lanka" },
+  { value: "24/7",    label: "Your customers get an answer" },
+  { value: "2–3 wks", label: "From first call to live" },
+  { value: "100%",    label: "Yours: code, data and keys" },
+  { value: "1",       label: "Person to talk to, who builds it" },
 ];
 
-const WHO_WE_ARE = [
+/** The problems a client walks in with, and what we put in place for each. */
+const PROBLEMS = [
   {
     num: "01",
-    title: "A studio that ships its own products",
-    desc: "We are not a consultancy that only builds for other people. IslandLoaf and Authority13 are ours — designed, built, launched and operated in-house, in production, on real infrastructure.",
+    problem: "Customers message at night and nobody answers",
+    fix: "An AI assistant on your website and WhatsApp answers questions, quotes, and books, then hands the serious enquiries to you. Nobody waits until morning.",
   },
   {
     num: "02",
-    title: "One founder, no agency layers",
-    desc: "You talk to the person writing the code. No account manager, no handover, no discovery phase that bills for six weeks before anything exists.",
+    problem: "The phone rings while you're busy",
+    fix: "A voice assistant picks up, answers the questions you hear every day, books the appointment and sends you a summary. No more missed calls turning into lost customers.",
   },
   {
     num: "03",
-    title: "Built in Negombo, Sri Lanka",
-    desc: "Sri Lankan engineering at Sri Lankan rates, held to the standard of the products we run ourselves. Everything we sell has already survived our own production.",
+    problem: "Your week disappears into admin and follow-ups",
+    fix: "AI agents handle the repeat work — follow-ups, reminders, posting, reports — on a schedule, and ask for your approval before anything goes out.",
+  },
+  {
+    num: "04",
+    problem: "A platform takes a cut and owns your customers",
+    fix: "Your own booking or ordering system, on your own domain. The customer relationship and the money stay with you.",
+  },
+  {
+    num: "05",
+    problem: "You can't see what's working",
+    fix: "One dashboard with the numbers that decide something — sales, bookings, enquiries — updated automatically, no spreadsheet exports.",
+  },
+  {
+    num: "06",
+    problem: "You need new customers but have no list",
+    fix: "We build the list for you: businesses or prospects pulled from public directories and maps, cleaned and put into a database you own.",
   },
 ];
 
@@ -52,26 +68,24 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <p className="font-dm-mono text-[11px] tracking-[0.22em] uppercase text-clay-mid mb-8 flex items-center gap-3">
             <span className="w-8 h-px bg-terracotta inline-block" />
-            AI studio — Negombo, Sri Lanka
+            AI for businesses — Negombo, Sri Lanka
           </p>
           <h1 className="font-display font-semibold text-[13vw] sm:text-7xl lg:text-[5.5rem] leading-[1.02] tracking-[-0.02em] text-clay-deep max-w-4xl">
-            We build AI that{" "}
-            <em className="text-terracotta">actually works</em>.
+            Stop losing customers to{" "}
+            <em className="text-terracotta">slow replies and busywork</em>.
           </h1>
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
             <p className="font-instrument text-lg text-clay-mid leading-relaxed max-w-md">
-              An independent studio running two of its own products —{" "}
-              <Link href="/ventures#islandloaf" className="text-clay-deep underline decoration-clay-border underline-offset-4 hover:decoration-terracotta">IslandLoaf</Link>{" "}
-              and{" "}
-              <Link href="/ventures#authority13" className="text-clay-deep underline decoration-clay-border underline-offset-4 hover:decoration-terracotta">Authority13</Link>
-              {" "}— and building the same class of software for other people.
+              We build AI that answers your customers, books your appointments and
+              runs the repetitive work, so your business grows without hiring more
+              people to keep up.
             </p>
             <div className="flex flex-col sm:flex-row lg:justify-end gap-3">
-              <Link href="/ventures" className="btn-clay-dark inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm">
-                See what we build <ArrowRight size={15} />
+              <Link href="#problems" className="btn-clay-dark inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm">
+                See what we fix <ArrowRight size={15} />
               </Link>
               <Link href="/services" className="btn-clay-light inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm">
-                Commission a build
+                Tell us your problem
               </Link>
             </div>
           </div>
@@ -91,32 +105,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHO WE ARE ─────────────────────────────────── */}
-      <section id="who-we-are" className="border-t border-clay-border">
+      {/* ── PROBLEMS WE SOLVE ──────────────────────────── */}
+      <section id="problems" className="border-t border-clay-border">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-[22rem_1fr] gap-12 lg:gap-16">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <p className="font-dm-mono text-[11px] tracking-[0.22em] uppercase text-clay-mid mb-4">Who we are</p>
+              <p className="font-dm-mono text-[11px] tracking-[0.22em] uppercase text-clay-mid mb-4">Problems we solve</p>
               <h2 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight text-clay-deep leading-[1.05] mb-6">
-                A product company that <em className="text-terracotta">takes clients</em>.
+                Sound <em className="text-terracotta">familiar</em>?
               </h2>
               <p className="font-instrument text-clay-mid leading-relaxed mb-8">
-                AI Code Agency (Pvt) Ltd is a one-founder AI studio in Negombo. We
-                build and operate our own software, and we take on outside builds
-                with the same stack that runs it.
+                These are the problems business owners bring us most. Each one has
+                a fix we have already built and run in production.
               </p>
-              <Link href="/about" className="font-instrument text-sm text-clay-deep inline-flex items-center gap-1.5 hover:text-terracotta transition-colors">
-                About the founder <ArrowUpRight size={14} />
+              <Link href="/services" className="font-instrument text-sm text-clay-deep inline-flex items-center gap-1.5 hover:text-terracotta transition-colors">
+                Tell us yours <ArrowUpRight size={14} />
               </Link>
             </div>
 
             <div className="border-t border-clay-border">
-              {WHO_WE_ARE.map((item) => (
+              {PROBLEMS.map((item) => (
                 <div key={item.num} className="py-8 border-b border-clay-border grid grid-cols-[3rem_1fr] gap-x-4">
                   <span className="font-dm-mono text-xs text-clay-light pt-1.5">{item.num}</span>
                   <div>
-                    <h3 className="font-display font-semibold text-2xl text-clay-deep mb-2.5">{item.title}</h3>
-                    <p className="font-instrument text-clay-mid leading-relaxed max-w-xl">{item.desc}</p>
+                    <h3 className="font-display font-semibold text-2xl text-clay-deep mb-2.5">{item.problem}</h3>
+                    <p className="font-instrument text-clay-mid leading-relaxed max-w-xl">
+                      <span className="text-terracotta font-semibold">What we do: </span>
+                      {item.fix}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -130,9 +146,9 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-24">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
             <div>
-              <p className="font-dm-mono text-[11px] tracking-[0.22em] uppercase text-clay-mid mb-4">Our ventures</p>
+              <p className="font-dm-mono text-[11px] tracking-[0.22em] uppercase text-clay-mid mb-4">Proof it works</p>
               <h2 className="font-display font-semibold text-4xl sm:text-5xl tracking-tight text-clay-deep">
-                Two products we <em className="text-terracotta">run ourselves</em>.
+                We run the same tools in <em className="text-terracotta">our own businesses</em>.
               </h2>
             </div>
             <Link href="/ventures" className="font-instrument text-sm text-clay-mid hover:text-clay-deep inline-flex items-center gap-1.5 transition-colors shrink-0">
@@ -255,17 +271,17 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-28 text-center">
           <p className="font-dm-mono text-[11px] tracking-[0.22em] uppercase text-white/40 mb-6">Start a project</p>
           <h2 className="font-display font-semibold text-4xl sm:text-6xl tracking-tight text-clay-bg mb-5">
-            Tell us what you<br />need built<em className="text-terracotta">.</em>
+            What&apos;s slowing your<br />business down<em className="text-terracotta">?</em>
           </h2>
           <p className="font-instrument text-white/50 text-lg mb-10 max-w-md mx-auto">
-            One founder, direct. Most builds go live in two to three weeks.
+            Tell us the problem. You talk directly to the person who builds the fix, and most go live in two to three weeks.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/services"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-terracotta text-white font-instrument font-semibold text-sm transition-colors hover:bg-terracotta-deep"
             >
-              Commission a build <ArrowRight size={15} />
+              Tell us your problem <ArrowRight size={15} />
             </Link>
             <Link
               href="/store"

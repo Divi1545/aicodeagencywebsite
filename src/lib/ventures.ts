@@ -34,12 +34,12 @@ export const VENTURES: Venture[] = [
     body: [
       "Most small Sri Lankan guesthouses, drivers and tour operators are invisible online, or they rent their visibility from a foreign platform that takes a cut and owns the customer. IslandLoaf is our answer to that: a Sri Lankan app, built here, where the business keeps the relationship and keeps the money.",
       "There are two halves. Travellers get an AI trip planner that talks them through stays, tours, transport and experiences and books the whole thing conversationally. Business owners get a dashboard where they run listings, calendar, bookings, pricing and payouts themselves — no agent, no phone calls, no spreadsheet.",
-      "Commission is 10%. The vendor keeps 90% of every booking, and payouts go straight to them.",
+      "Commission is 5%, about 3% of which is the card processing fee. The vendor keeps 95% of every booking, and payouts go straight to them.",
     ],
     capabilities: [
       "AI trip planner that books stays, tours, transport and wellness end to end",
       "Vendor dashboard — listings, calendar, availability, pricing, earnings",
-      "Direct payouts to the business, 10% commission, vendor keeps 90%",
+      "Direct payouts to the business, 5% commission, vendor keeps 95%",
       "Creator marketplace so Sri Lankan creators can earn from tourism campaigns",
       "iOS and Android apps alongside the web",
     ],
@@ -57,7 +57,7 @@ export const VENTURES: Venture[] = [
     ],
     facts: [
       { label: "Built for", value: "Sri Lanka" },
-      { label: "Commission", value: "10%" },
+      { label: "Commission", value: "5%" },
       { label: "Platforms", value: "Web · iOS · Android" },
       { label: "Stack", value: "Next.js · Supabase · Claude" },
     ],
